@@ -9,14 +9,11 @@ export const Slide1Title: React.FC = () => {
       id="slide-1"
     >
       {/* Top Secret Header Strip */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6 gap-4">
-        <div className="flex items-center gap-2 min-w-0">
-          <span className="font-dossier-code text-sm sm:text-base md:text-lg lg:text-xl font-black tracking-wider text-[#1c1917] whitespace-nowrap">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
+        <div className="flex items-center gap-2">
+          <span className="font-dossier-code text-base sm:text-xl md:text-2xl font-black tracking-wider text-[#1c1917] whitespace-nowrap">
             FILE NO: #Kos-11-26-PL // SECRET BUREAU OF KNOWLEDGE
           </span>
-        </div>
-        <div className="stamp-top-secret text-xs sm:text-sm flex-shrink-0 whitespace-nowrap">
-          TOP SECRET // EMERGENCY WARNING
         </div>
       </div>
 
