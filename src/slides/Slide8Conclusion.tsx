@@ -25,44 +25,38 @@ export const Slide8Conclusion: React.FC = () => {
           data-step-reveal="1"
           className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center text-left transition-[opacity,transform] duration-700 md:pl-3 lg:pl-6 relative"
         >
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 relative">
-            <div>
-              {/* Giant Punchy Spotlight Blessing (Enlarged 130%, 4 Sequential Non-Wrapping Lines) */}
-              <h2 
-                className="slide-8-hero-title font-black text-[#141413] leading-[1.1] font-dossier-title tracking-tight uppercase pen-write-anim"
-                data-pause-between-lines="true"
-              >
-                <div className="write-line-row block">
-                  <span className="write-line whitespace-nowrap block">I Hope You Catch</span>
-                </div>
-                <div className="write-line-row block mt-0.5 sm:mt-1">
-                  <span className="write-line whitespace-nowrap block">the Reading Disease</span>
-                </div>
-                <div className="write-line-row block mt-2 sm:mt-3">
-                  <span className="write-line text-[#b91c1c] whitespace-nowrap block">And Never</span>
-                </div>
-                <div className="write-line-row block mt-0.5 sm:mt-1">
-                  <span className="write-line text-[#b91c1c] underline decoration-[#b91c1c] decoration-8 whitespace-nowrap block">
-                    Find a Cure!
-                  </span>
-                </div>
-              </h2>
+          {/* Giant Punchy Spotlight Blessing (Enlarged 130%, 4 Sequential Non-Wrapping Lines) */}
+          <h2 
+            className="slide-8-hero-title font-black text-[#141413] leading-[1.1] font-dossier-title tracking-tight uppercase pen-write-anim"
+            data-pause-between-lines="true"
+          >
+            <div className="write-line-row block">
+              <span className="write-line whitespace-nowrap block">I Hope You Catch</span>
             </div>
+            <div className="write-line-row block mt-0.5 sm:mt-1">
+              <span className="write-line whitespace-nowrap block">the Reading Disease</span>
+            </div>
+            <div className="write-line-row block mt-2 sm:mt-3">
+              <span className="write-line text-[#b91c1c] whitespace-nowrap block">And Never</span>
+            </div>
+            <div className="flex items-center gap-3 sm:gap-4 mt-0.5 sm:mt-1 flex-nowrap w-fit">
+              <div className="write-line-row !w-fit !inline-block">
+                <span className="write-line text-[#b91c1c] underline decoration-[#b91c1c] decoration-8 whitespace-nowrap block">
+                  Find a Cure!
+                </span>
+              </div>
 
-            {/* Circular Rubber Stamp: Forrest Gump (Deck Finale Slam) */}
-            <div className="shrink-0 pb-1 sm:pb-2 sm:mr-2 md:mr-4 lg:mr-6 self-start sm:self-end">
+              {/* Circular Rubber Stamp: Forrest Gump (Deck Finale Slam) */}
               <div 
                 id="slide8ForrestGumpStamp"
-                className="stamp-circle-realistic shadow-lg"
+                className="stamp-circle-realistic shadow-lg shrink-0 ml-1 sm:ml-2"
               >
                 <div className="stamp-circle-inner">
-                  <div className="stamp-circle-sub-top">★ SPECIAL AGENT ★</div>
                   <div className="stamp-circle-name">FORREST GUMP</div>
-                  <div className="stamp-circle-sub-bottom">★ CASE CLOSED ★</div>
                 </div>
               </div>
             </div>
-          </div>
+          </h2>
         </div>
 
         {/* Right Column / Center at Step 0: Evidence Board Image Frame with Stamp Slam */}
