@@ -263,6 +263,12 @@ export function initDeckEngine(): () => void {
       if (lines.length === 0) {
         textEl.style.clipPath = 'none';
         quill.remove();
+        if (currentSlide === 1 && currentStep === 1 && textEl.closest('#slide-1')) {
+          triggerSlide1StampsAnimation();
+        }
+        if (currentSlide === 8 && currentStep === 1 && textEl.closest('#slide-8')) {
+          triggerSlide8ForrestGumpStampAnimation();
+        }
         return;
       }
 
@@ -377,9 +383,14 @@ export function initDeckEngine(): () => void {
           activeHandwriteRaf = null;
           activeTextEl = null;
 
-          // If on Slide 1 and finished writing, trigger sequential stamps!
-          if (hasDramaticPause || (currentSlide === 1 && currentStep === 1)) {
+          // If on Slide 1 at Step 1, trigger sequential stamps ONLY AFTER handwriting completes!
+          if (currentSlide === 1 && currentStep === 1 && textEl.closest('#slide-1')) {
             triggerSlide1StampsAnimation();
+          }
+
+          // If on Slide 8 at Step 1, trigger Forrest Gump circular stamp ONLY AFTER handwriting completes!
+          if (currentSlide === 8 && currentStep === 1 && textEl.closest('#slide-8')) {
+            triggerSlide8ForrestGumpStampAnimation();
           }
           return;
         }
@@ -456,6 +467,19 @@ export function initDeckEngine(): () => void {
   function updateStepVisuals(slideEl: HTMLElement | null) {
     if (!slideEl) return;
     slideEl.setAttribute('data-current-step', String(currentStep));
+
+    if (currentSlide === 1) {
+      // Whenever step changes or before title animation, keep stamps hidden
+      resetSlide1Stamps();
+    }
+
+    if (currentSlide === 8) {
+      if (currentStep === 0) {
+        resetSlide8ForrestGumpStamp();
+      }
+    } else {
+      resetSlide8ForrestGumpStamp();
+    }
 
     if (isPageFlipping) {
       return;
@@ -640,20 +664,34 @@ export function initDeckEngine(): () => void {
     }
   }
 
+  function resetSlide1Stamps() {
+    const stamp1 = document.getElementById('slide1Stamp1');
+    const stamp2 = document.getElementById('slide1Stamp2');
+    if (stamp1) {
+      stamp1.classList.remove('animate-stamp-realistic');
+      stamp1.style.opacity = '0';
+      stamp1.style.visibility = 'hidden';
+    }
+    if (stamp2) {
+      stamp2.classList.remove('animate-stamp-realistic');
+      stamp2.style.opacity = '0';
+      stamp2.style.visibility = 'hidden';
+    }
+  }
+
   function triggerSlide1StampsAnimation() {
+    if (currentSlide !== 1 || currentStep !== 1) return;
     const stamp1 = document.getElementById('slide1Stamp1');
     const stamp2 = document.getElementById('slide1Stamp2');
     const slide1 = document.getElementById('slide-1');
     if (!stamp1 || !stamp2) return;
 
-    // Reset stamps
-    stamp1.classList.remove('animate-stamp-realistic');
-    stamp2.classList.remove('animate-stamp-realistic');
-    stamp1.style.opacity = '0';
-    stamp2.style.opacity = '0';
+    // Reset stamps to hidden first before slamming
+    resetSlide1Stamps();
 
-    // Stamp 1: TOP SECRET FILE (slams first)
+    // Stamp 1: TOP SECRET FILE (slams 280ms after text writing finishes completely)
     fxTimeout(() => {
+      if (currentSlide !== 1 || currentStep !== 1) return;
       const endAngle1 = (Math.random() * 4 - 8).toFixed(1); // -8deg to -4deg
       const startAngle1 = (parseFloat(endAngle1) - 10).toFixed(1);
       const midAngle1 = (parseFloat(endAngle1) + 2).toFixed(1);
@@ -661,9 +699,10 @@ export function initDeckEngine(): () => void {
       stamp1.style.setProperty('--start-rot', `${startAngle1}deg`);
       stamp1.style.setProperty('--mid-rot', `${midAngle1}deg`);
       stamp1.style.setProperty('--end-rot', `${endAngle1}deg`);
+      stamp1.style.visibility = 'visible';
+      stamp1.style.opacity = '0.95';
       void stamp1.offsetWidth;
       stamp1.classList.add('animate-stamp-realistic');
-      stamp1.style.opacity = '1';
 
       if (slide1) {
         slide1.classList.remove('animate-shake');
@@ -671,12 +710,13 @@ export function initDeckEngine(): () => void {
           void slide1.offsetWidth;
           slide1.classList.add('animate-shake');
           playStampAudioThud();
-        }, 200);
+        }, 180);
       }
-    }, 120);
+    }, 280);
 
-    // Stamp 2: INTERNAL USE ONLY (slams 450ms after stamp 1)
+    // Stamp 2: INTERNAL USE ONLY (slams 480ms after stamp 1)
     fxTimeout(() => {
+      if (currentSlide !== 1 || currentStep !== 1) return;
       const endAngle2 = (Math.random() * 4 + 4).toFixed(1); // +4deg to +8deg
       const startAngle2 = (parseFloat(endAngle2) - 10).toFixed(1);
       const midAngle2 = (parseFloat(endAngle2) + 2).toFixed(1);
@@ -684,9 +724,10 @@ export function initDeckEngine(): () => void {
       stamp2.style.setProperty('--start-rot', `${startAngle2}deg`);
       stamp2.style.setProperty('--mid-rot', `${midAngle2}deg`);
       stamp2.style.setProperty('--end-rot', `${endAngle2}deg`);
+      stamp2.style.visibility = 'visible';
+      stamp2.style.opacity = '0.95';
       void stamp2.offsetWidth;
       stamp2.classList.add('animate-stamp-realistic');
-      stamp2.style.opacity = '1';
 
       if (slide1) {
         slide1.classList.remove('animate-shake');
@@ -694,9 +735,9 @@ export function initDeckEngine(): () => void {
           void slide1.offsetWidth;
           slide1.classList.add('animate-shake');
           playStampAudioThud();
-        }, 200);
+        }, 180);
       }
-    }, 580);
+    }, 760);
   }
 
   function triggerSlide8StampAnimation() {
@@ -727,6 +768,51 @@ export function initDeckEngine(): () => void {
         playStampAudioThud();
       }, 210);
     }
+  }
+
+  function resetSlide8ForrestGumpStamp() {
+    const stampEl = document.getElementById('slide8ForrestGumpStamp');
+    if (!stampEl) return;
+    stampEl.classList.remove('animate-stamp-realistic');
+    stampEl.style.opacity = '0';
+    stampEl.style.visibility = 'hidden';
+  }
+
+  function triggerSlide8ForrestGumpStampAnimation() {
+    const stampEl = document.getElementById('slide8ForrestGumpStamp');
+    const slide8 = document.getElementById('slide-8');
+    if (!stampEl) return;
+
+    // Reset stamp first
+    resetSlide8ForrestGumpStamp();
+
+    // Natural 260ms breath after handwriting lifts before the final seal slams down
+    fxTimeout(() => {
+      if (currentSlide !== 8 || currentStep !== 1) return;
+
+      const endAngle = (Math.random() * 4 - 14).toFixed(1); // -14deg to -10deg
+      const startAngle = (parseFloat(endAngle) - 14).toFixed(1);
+      const midAngle = (parseFloat(endAngle) + 3).toFixed(1);
+
+      stampEl.style.setProperty('--start-rot', `${startAngle}deg`);
+      stampEl.style.setProperty('--mid-rot', `${midAngle}deg`);
+      stampEl.style.setProperty('--end-rot', `${endAngle}deg`);
+
+      stampEl.style.visibility = 'visible';
+      stampEl.style.opacity = '0.95';
+      void stampEl.offsetWidth;
+      stampEl.classList.add('animate-stamp-realistic');
+
+      // Trigger paper shake and audio thud on impact (~200ms)
+      if (slide8) {
+        slide8.classList.remove('animate-shake');
+        fxTimeout(() => {
+          void slide8.offsetWidth;
+          slide8.classList.add('animate-shake');
+          playStampAudioThud();
+        }, 200);
+      }
+    }, 260);
   }
 
   function updateUI() {
@@ -960,6 +1046,8 @@ export function initDeckEngine(): () => void {
 
     stopCurrentHandwriting();
     clearFxTimers();
+    resetSlide1Stamps();
+    resetSlide8ForrestGumpStamp();
 
     const oldSlideNum = currentSlide;
     const targetSlideNum = n;
@@ -1237,6 +1325,8 @@ export function initDeckEngine(): () => void {
   return () => {
     stopCurrentHandwriting();
     clearFxTimers();
+    resetSlide1Stamps();
+    resetSlide8ForrestGumpStamp();
     if (activeCurlCleanup) activeCurlCleanup();
     if (sharedAudioCtx) {
       sharedAudioCtx.close().catch(() => {});

@@ -49,12 +49,14 @@ export const Slide1Title: React.FC = () => {
               <div 
                 id="slide1Stamp1" 
                 className="stamp-rect-realistic text-sm sm:text-base md:text-lg font-bold opacity-0 shadow-lg"
+                style={{ opacity: 0, visibility: 'hidden' }}
               >
                 TOP SECRET FILE
               </div>
               <div 
                 id="slide1Stamp2" 
                 className="stamp-rect-realistic text-sm sm:text-base md:text-lg font-bold opacity-0 shadow-lg"
+                style={{ opacity: 0, visibility: 'hidden' }}
               >
                 INTERNAL USE ONLY
               </div>

@@ -32,27 +32,27 @@ export const Slide4ToolsMerged: React.FC = () => {
             </h2>
           </div>
 
-          {/* 3 Step Cards with Generous Spacing and Inline Category Badges */}
-          <div className="flex flex-col gap-4 sm:gap-5 mt-2 sm:mt-3 flex-1">
+          {/* 3 Step Cards with Compact Height and Tight Line Spacing */}
+          <div className="flex flex-col gap-2.5 sm:gap-3 mt-1.5 sm:mt-2 flex-1">
             
             {/* Medium 1: Paper book */}
             <div 
               data-step-card="1"
-              className="step-card dossier-card p-5.5 sm:p-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px]"
+              className="step-card dossier-card py-2.5 sm:py-3 px-5 sm:px-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[96px] sm:min-h-[100px]"
             >
-              <div className="flex items-center gap-3.5">
-                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#b45309] text-white flex-shrink-0">
+              <div className="flex items-center gap-3">
+                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#b45309] text-white flex-shrink-0 px-2.5 py-1 shadow-sm font-dossier-code">
                   WEAPON #01
                 </span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black font-dossier-title text-[#b45309] uppercase tracking-wide">
+                <span className="text-xl sm:text-2xl md:text-[28px] font-black font-dossier-title text-[#b45309] uppercase tracking-wide">
                   PAPER BOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[22px] lg:text-[24px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-[17px] sm:text-[19px] md:text-[21px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-1.5 pen-write-anim text-left leading-tight">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">Addictive smell,</span>
                 </div>
-                <div className="write-line-row block mt-0.5 sm:mt-1">
+                <div className="write-line-row block mt-0 sm:mt-0.5">
                   <span className="write-line whitespace-nowrap block text-[#b45309] font-bold">free gym weights in your backpack</span>
                 </div>
               </div>
@@ -61,21 +61,21 @@ export const Slide4ToolsMerged: React.FC = () => {
             {/* Medium 2: E-Reader */}
             <div 
               data-step-card="2"
-              className="step-card dossier-card p-5.5 sm:p-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px]"
+              className="step-card dossier-card py-2.5 sm:py-3 px-5 sm:px-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[96px] sm:min-h-[100px]"
             >
-              <div className="flex items-center gap-3.5">
-                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#0369a1] text-white flex-shrink-0">
+              <div className="flex items-center gap-3">
+                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#0369a1] text-white flex-shrink-0 px-2.5 py-1 shadow-sm font-dossier-code">
                   WEAPON #02
                 </span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black font-dossier-title text-[#0369a1] uppercase tracking-wide">
+                <span className="text-xl sm:text-2xl md:text-[28px] font-black font-dossier-title text-[#0369a1] uppercase tracking-wide">
                   E-BOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[22px] lg:text-[24px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-[17px] sm:text-[19px] md:text-[21px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-1.5 pen-write-anim text-left leading-tight">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">A library in your pocket,</span>
                 </div>
-                <div className="write-line-row block mt-0.5 sm:mt-1">
+                <div className="write-line-row block mt-0 sm:mt-0.5">
                   <span className="write-line whitespace-nowrap block text-[#0369a1] font-bold">"Low Battery!" on the final page</span>
                 </div>
               </div>
@@ -84,21 +84,21 @@ export const Slide4ToolsMerged: React.FC = () => {
             {/* Medium 3: Audiobook */}
             <div 
               data-step-card="3"
-              className="step-card dossier-card p-5.5 sm:p-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px]"
+              className="step-card dossier-card py-2.5 sm:py-3 px-5 sm:px-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[96px] sm:min-h-[100px]"
             >
-              <div className="flex items-center gap-3.5">
-                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#15803d] text-white flex-shrink-0">
+              <div className="flex items-center gap-3">
+                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#15803d] text-white flex-shrink-0 px-2.5 py-1 shadow-sm font-dossier-code">
                   WEAPON #03
                 </span>
-                <span className="text-2xl sm:text-3xl md:text-4xl font-black font-dossier-title text-[#15803d] uppercase tracking-wide">
+                <span className="text-xl sm:text-2xl md:text-[28px] font-black font-dossier-title text-[#15803d] uppercase tracking-wide">
                   AUDIOBOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[22px] lg:text-[24px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-[17px] sm:text-[19px] md:text-[21px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-1.5 pen-write-anim text-left leading-tight">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">A strong sleeping pill</span>
                 </div>
-                <div className="write-line-row block mt-0.5 sm:mt-1">
+                <div className="write-line-row block mt-0 sm:mt-0.5">
                   <span className="write-line whitespace-nowrap block text-[#15803d] font-bold">while you wash dishes or drive</span>
                 </div>
               </div>
@@ -136,7 +136,7 @@ export const Slide4ToolsMerged: React.FC = () => {
 
       </div>
 
-      <div className="h-2"></div>
+      <div className="h-6 sm:h-8"></div>
     </div>
   );
 };
