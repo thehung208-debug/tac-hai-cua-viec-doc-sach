@@ -17,7 +17,7 @@ export const Slide2Roadmap: React.FC = () => {
       id="slide-2"
     >
       {/* Top Secret Header Strip */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
         <div className="flex items-center gap-2">
           <span className="font-dossier-code text-sm sm:text-base font-bold tracking-wider text-[#1c1917]">
             INVESTIGATION PLAN: 30-MINUTE WARNING
@@ -29,13 +29,13 @@ export const Slide2Roadmap: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full z-10">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full z-10">
         
         {/* Left 7 Columns: Header & 5 Stages */}
         <div className="col-span-12 md:col-span-7 flex flex-col gap-3">
           
           <div>
-            <h2 className="slide-main-title font-bold text-[#141413] leading-[1.08] font-dossier-title uppercase pen-write-anim">
+            <h2 className="slide-main-title font-bold text-[#141413] leading-[1.12] font-dossier-title uppercase pen-write-anim whitespace-nowrap">
               5 Parts of the Dark Truth
             </h2>
           </div>
@@ -63,8 +63,8 @@ export const Slide2Roadmap: React.FC = () => {
         </div>
 
         {/* Right 5 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[320px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
+        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[285px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
             <div className="dossier-paperclip"></div>
             
             {/* Header: Minimal Text, Clean Font */}
@@ -78,7 +78,7 @@ export const Slide2Roadmap: React.FC = () => {
             </div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[420px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide2-claymation.webp"
                 alt="Detective Corkboard Roadmap"

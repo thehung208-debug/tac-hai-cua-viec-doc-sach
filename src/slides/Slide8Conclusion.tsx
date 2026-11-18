@@ -9,7 +9,7 @@ export const Slide8Conclusion: React.FC = () => {
       id="slide-8"
     >
       {/* Top Secret Header Strip */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
         <div className="flex items-center gap-2">
           <span className="font-dossier-code text-sm sm:text-base font-bold tracking-wider text-[#1c1917]">
             FINAL REPORT // CASE CLOSED
@@ -21,30 +21,30 @@ export const Slide8Conclusion: React.FC = () => {
       </div>
 
       {/* Main Slide Content: Dynamic 2-Phase Grid */}
-      <div className="my-auto grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full z-10 relative">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-6xl mx-auto w-full z-10 relative">
         
         {/* Left Column: Spotlight Final Blessing (Revealed on Step 1) */}
         <div 
           data-step-reveal="1"
-          className="slide-8-title-col col-span-12 md:col-span-8 flex flex-col justify-center gap-4 text-left transition-all duration-700"
+          className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-all duration-700 pr-2"
         >
           <div>
-            {/* Giant Punchy Spotlight Blessing (Enlarged 150%, 4 Sequential Non-Wrapping Lines) */}
+            {/* Giant Punchy Spotlight Blessing (4 Sequential Non-Wrapping Lines, Clear of Photo Frame) */}
             <h2 
               className="slide-8-hero-title font-black text-[#141413] leading-[1.12] font-dossier-title tracking-tight uppercase pen-write-anim"
               data-pause-between-lines="true"
             >
               <div className="write-line-row">
-                <span className="write-line">I Hope You Catch</span>
+                <span className="write-line whitespace-nowrap">I Hope You Catch</span>
               </div>
               <div className="write-line-row">
-                <span className="write-line">the Reading Disease</span>
+                <span className="write-line whitespace-nowrap">the Reading Disease</span>
               </div>
               <div className="write-line-row mt-2">
-                <span className="write-line text-[#b91c1c]">And Never</span>
+                <span className="write-line text-[#b91c1c] whitespace-nowrap">And Never</span>
               </div>
               <div className="write-line-row">
-                <span className="write-line text-[#b91c1c] underline decoration-[#b91c1c] decoration-8">
+                <span className="write-line text-[#b91c1c] underline decoration-[#b91c1c] decoration-8 whitespace-nowrap">
                   Find a Cure!
                 </span>
               </div>
@@ -53,15 +53,15 @@ export const Slide8Conclusion: React.FC = () => {
         </div>
 
         {/* Right Column / Center at Step 0: Evidence Board Image Frame with Stamp Slam */}
-        <div className="slide-8-image-col col-span-12 md:col-span-4 flex flex-col items-center justify-center transition-all duration-700">
+        <div className="slide-8-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center transition-all duration-700">
           <div 
             id="slide8PhotoFrame"
-            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[320px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-all duration-700"
+            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-all duration-700"
           >
             <div className="dossier-paperclip"></div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[420px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide8-claymation.webp"
                 alt="Case Closed Illustration"

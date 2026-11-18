@@ -79,78 +79,82 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
    SLIDE MAIN TITLES (ENLARGED 150%)
    ========================================================================== */
 
-/* Universal slide title for Slides 2 through 7 (Previous: 48px -> Now 150%: 72px) */
+/* Universal slide title for Slides 2 through 7 (Fits on 1 single line without wrapping) */
 .slide-main-title {
-  font-size: 45px !important; /* 150% of 30px */
-  line-height: 1.08 !important;
+  font-size: clamp(1.6rem, 2.7vw, 2.65rem) !important;
+  line-height: 1.12 !important;
   letter-spacing: -0.5px !important;
+  white-space: nowrap !important;
 }
 
 @media (min-width: 640px) {
   .slide-main-title {
-    font-size: 54px !important; /* 150% of 36px */
+    font-size: clamp(1.85rem, 2.8vw, 2.85rem) !important;
+    white-space: nowrap !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-main-title {
-    font-size: 64px !important; /* 150% of ~42px */
+    font-size: clamp(2rem, 2.9vw, 3rem) !important;
+    white-space: nowrap !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-main-title {
-    font-size: 72px !important; /* 150% of 48px */
+    font-size: clamp(2.2rem, 2.9vw, 3.15rem) !important; /* ~48px - fits on 1 line across all viewports */
+    white-space: nowrap !important;
   }
 }
 
-/* Slide 1 Cover Hero Title (Previous: 96px -> Now 150%: 136px - 144px) */
+/* Slide 1 Cover Hero Title (Balanced & Proportional, Never Overlaps Photo Frame) */
 .slide-1-hero-title {
-  font-size: 72px !important; /* 150% of 48px */
-  line-height: 1.02 !important;
+  font-size: clamp(2.5rem, 5vw, 4.2rem) !important;
+  line-height: 1.05 !important;
   letter-spacing: -1px !important;
 }
 
 @media (min-width: 640px) {
   .slide-1-hero-title {
-    font-size: 90px !important; /* 150% of 60px */
+    font-size: clamp(2.8rem, 5.2vw, 4.5rem) !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-1-hero-title {
-    font-size: 108px !important; /* 150% of 72px */
+    font-size: clamp(3.2rem, 5.4vw, 4.8rem) !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-1-hero-title {
-    font-size: 136px !important; /* 150% scaling */
+    font-size: clamp(3.5rem, 5.2vw, 5rem) !important; /* ~78px - 82px */
   }
 }
 
-/* Slide 8 Conclusion Hero Title */
+/* Slide 8 Conclusion Hero Title (4 Sequential Non-Wrapping Lines, Clear of Photo Frame) */
 .slide-8-hero-title {
-  font-size: 48px !important;
-  line-height: 1.05 !important;
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem) !important;
+  line-height: 1.12 !important;
   letter-spacing: -0.5px !important;
 }
 
 @media (min-width: 640px) {
   .slide-8-hero-title {
-    font-size: 60px !important;
+    font-size: clamp(1.95rem, 3.3vw, 2.95rem) !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-8-hero-title {
-    font-size: 72px !important;
+    font-size: clamp(2.15rem, 3.4vw, 3.15rem) !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-8-hero-title {
-    font-size: 82px !important;
+    font-size: clamp(2.35rem, 3.4vw, 3.35rem) !important; /* ~52px - 54px */
   }
 }
 
@@ -1154,9 +1158,20 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45) !important;
 }
 
+/* Universal Top Header Clearance: Guarantees title & content never hit the top separator bar */
+.slide > .border-b-2 {
+  margin-bottom: 1.25rem !important;
+}
+
+@media (min-width: 768px) {
+  .slide > .border-b-2 {
+    margin-bottom: 1.75rem !important;
+  }
+}
+
 /* Step 1: Smooth transition when ArrowRight is pressed */
 #slide-1[data-current-step="1"] .slide-1-title-col {
-  grid-column: span 8 / span 12 !important;
+  grid-column: span 7 / span 12 !important;
   opacity: 1 !important;
   visibility: visible !important;
   display: flex !important;
@@ -1165,12 +1180,15 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 }
 
 #slide-1[data-current-step="1"] .slide-1-image-col {
-  grid-column: span 4 / span 12 !important;
+  grid-column: span 5 / span 12 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #slide-1[data-current-step="1"] .evidence-photo-frame {
-  max-width: 290px !important;
+  max-width: 270px !important;
   transform: scale(1) rotate(1deg) !important;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1205,7 +1223,7 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 
 /* Step 1: Smooth transition when ArrowRight is pressed */
 #slide-8[data-current-step="1"] .slide-8-title-col {
-  grid-column: span 8 / span 12 !important;
+  grid-column: span 7 / span 12 !important;
   opacity: 1 !important;
   visibility: visible !important;
   display: flex !important;
@@ -1214,12 +1232,15 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 }
 
 #slide-8[data-current-step="1"] .slide-8-image-col {
-  grid-column: span 4 / span 12 !important;
+  grid-column: span 5 / span 12 !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #slide-8[data-current-step="1"] .evidence-photo-frame {
-  max-width: 290px !important;
+  max-width: 270px !important;
   transform: scale(1) rotate(1deg) !important;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }

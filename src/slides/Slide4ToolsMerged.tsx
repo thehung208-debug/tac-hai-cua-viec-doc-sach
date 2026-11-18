@@ -9,7 +9,7 @@ export const Slide4ToolsMerged: React.FC = () => {
       id="slide-4"
     >
       {/* Top Secret Header */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
         <div className="flex items-center gap-2">
           <span className="font-dossier-code text-sm sm:text-base font-bold tracking-wider text-[#1c1917]">
             EVIDENCE FILE #02: THREE DANGEROUS TOOLS
@@ -21,24 +21,24 @@ export const Slide4ToolsMerged: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full z-10">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full z-10">
         
         {/* Left 7 Columns: Title & 3 Weapons */}
         <div className="col-span-12 md:col-span-7 flex flex-col gap-3.5">
           
           <div>
-            <h2 className="slide-main-title font-bold text-[#141413] font-dossier-title leading-[1.08] uppercase pen-write-anim">
+            <h2 className="slide-main-title font-bold text-[#141413] font-dossier-title leading-[1.12] uppercase pen-write-anim whitespace-nowrap">
               3 Dangerous Tools
             </h2>
           </div>
 
           {/* 3 Step Cards with Prominent Large Category Titles Inline with Badges */}
-          <div className="flex flex-col gap-3.5 mt-1 flex-1">
+          <div className="flex flex-col gap-3 sm:gap-3.5 mt-1 flex-1">
             
             {/* Medium 1: Paper book */}
             <div 
               data-step-card="1"
-              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[105px]"
+              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[110px]"
             >
               <div className="flex items-center gap-3.5">
                 <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#b45309] text-white flex-shrink-0">
@@ -48,15 +48,20 @@ export const Slide4ToolsMerged: React.FC = () => {
                   PAPER BOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#292524] font-typewriter mt-2 pen-write-anim text-left">
-                Addictive smell, free gym weights in your backpack
+              <div className="text-xl sm:text-2xl md:text-[26px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+                <div className="write-line-row">
+                  <span className="write-line">Addictive paper smell,</span>
+                </div>
+                <div className="write-line-row">
+                  <span className="write-line text-[#b45309]">free gym weights in your backpack</span>
+                </div>
               </div>
             </div>
 
             {/* Medium 2: E-Reader */}
             <div 
               data-step-card="2"
-              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[105px]"
+              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[110px]"
             >
               <div className="flex items-center gap-3.5">
                 <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#0369a1] text-white flex-shrink-0">
@@ -66,15 +71,20 @@ export const Slide4ToolsMerged: React.FC = () => {
                   E-BOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#292524] font-typewriter mt-2 pen-write-anim text-left">
-                A library in your pocket, "Low Battery!" on the final page
+              <div className="text-xl sm:text-2xl md:text-[26px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+                <div className="write-line-row">
+                  <span className="write-line">A library in your pocket,</span>
+                </div>
+                <div className="write-line-row">
+                  <span className="write-line text-[#0369a1]">"Low Battery!" on the final page</span>
+                </div>
               </div>
             </div>
 
             {/* Medium 3: Audiobook */}
             <div 
               data-step-card="3"
-              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[105px]"
+              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[110px]"
             >
               <div className="flex items-center gap-3.5">
                 <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#15803d] text-white flex-shrink-0">
@@ -84,8 +94,13 @@ export const Slide4ToolsMerged: React.FC = () => {
                   AUDIOBOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-[#292524] font-typewriter mt-2 pen-write-anim text-left">
-                A strong sleeping pill while you wash dishes or drive
+              <div className="text-xl sm:text-2xl md:text-[26px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+                <div className="write-line-row">
+                  <span className="write-line">A strong sleeping pill</span>
+                </div>
+                <div className="write-line-row">
+                  <span className="write-line text-[#15803d]">while you wash dishes or drive</span>
+                </div>
               </div>
             </div>
 
@@ -94,8 +109,8 @@ export const Slide4ToolsMerged: React.FC = () => {
         </div>
 
         {/* Right 5 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[320px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
+        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[285px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
             <div className="dossier-paperclip"></div>
             
             {/* Clean Header: Minimal Text, Larger Font */}
@@ -109,7 +124,7 @@ export const Slide4ToolsMerged: React.FC = () => {
             </div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[420px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide4-claymation.webp"
                 alt="3 Delivery Weapons Illustration"

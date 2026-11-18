@@ -22,7 +22,7 @@ export const Slide5HarmsMerged: React.FC = () => {
       <div className="slide5-spotlight-backdrop"></div>
 
       {/* Top Secret Header */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
         <div className="flex items-center gap-2">
           <span className="font-dossier-code text-sm sm:text-base font-bold tracking-wider text-[#1c1917]">
             EVIDENCE FILE #03: 7 TERRIBLE DANGERS
@@ -34,13 +34,13 @@ export const Slide5HarmsMerged: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full">
         
         {/* Left 7 Columns: Title & 7 Harms in a clean 2-column layout */}
         <div className="col-span-12 md:col-span-7 flex flex-col gap-3">
           
           <div>
-            <h2 className="slide-main-title font-bold text-[#141413] font-dossier-title leading-[1.08] uppercase pen-write-anim">
+            <h2 className="slide-main-title font-bold text-[#141413] font-dossier-title leading-[1.12] uppercase pen-write-anim whitespace-nowrap">
               7 Terrible Dangers
             </h2>
           </div>
@@ -74,8 +74,8 @@ export const Slide5HarmsMerged: React.FC = () => {
         </div>
 
         {/* Right 5 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[320px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
+        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[285px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
             <div className="dossier-paperclip"></div>
             
             {/* Clean Header: Minimal Text, Larger Font */}
@@ -89,7 +89,7 @@ export const Slide5HarmsMerged: React.FC = () => {
             </div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[420px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide5-claymation.webp"
                 alt="Brain Anatomy & Harms Illustration"

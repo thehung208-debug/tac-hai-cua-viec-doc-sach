@@ -9,7 +9,7 @@ export const Slide1Title: React.FC = () => {
       id="slide-1"
     >
       {/* Top Secret Header Strip */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
         <div className="flex items-center gap-2">
           <span className="font-dossier-code text-xl sm:text-2xl md:text-3xl font-black tracking-wider text-[#1c1917]">
             FILE NO: #Kos-11-26-PL // SECRET BUREAU OF KNOWLEDGE
@@ -21,17 +21,17 @@ export const Slide1Title: React.FC = () => {
       </div>
 
       {/* Main Slide Content: Dynamic 2-Phase Grid */}
-      <div className="my-auto grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full z-10 relative">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-6xl mx-auto w-full z-10 relative">
         
         {/* Left Column: Spotlight Title (Revealed on Step 1) */}
         <div 
           data-step-reveal="1"
-          className="slide-1-title-col col-span-12 md:col-span-8 flex flex-col justify-center gap-4 text-left transition-all duration-700"
+          className="slide-1-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-all duration-700 pr-2"
         >
           <div>
-            {/* Giant Punchy Spotlight Title (Enlarged 150%) */}
+            {/* Giant Punchy Spotlight Title (Enlarged, Balanced & Clear of Image) */}
             <h1 
-              className="slide-1-hero-title font-black text-[#141413] leading-[1.02] font-dossier-title tracking-tight uppercase pen-write-anim"
+              className="slide-1-hero-title font-black text-[#141413] leading-[1.05] font-dossier-title tracking-tight uppercase pen-write-anim"
               data-pause-between-lines="true"
             >
               <div className="write-line-row">
@@ -63,8 +63,8 @@ export const Slide1Title: React.FC = () => {
         </div>
 
         {/* Right Column / Center at Step 0: Evidence Board Image Frame */}
-        <div className="slide-1-image-col col-span-12 md:col-span-4 flex flex-col items-center justify-center transition-all duration-700">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[320px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-all duration-700">
+        <div className="slide-1-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center transition-all duration-700">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-all duration-700">
             <div className="dossier-paperclip"></div>
             
             {/* Header: Minimal Text, Clean Font */}
@@ -78,7 +78,7 @@ export const Slide1Title: React.FC = () => {
             </div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[420px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide1-claymation.webp"
                 alt="Classified Evidence: Agent Forrest Gump"
