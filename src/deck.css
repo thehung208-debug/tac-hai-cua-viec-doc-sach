@@ -1811,10 +1811,11 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
    SLIDE 3 CRAZY NUMBERS CARDS ENHANCEMENTS (Generous Padding Left to separate text & frame)
    ========================================================================== */
 #slide-3 .step-card {
-  padding-left: clamp(2.75rem, 4vw, 4.25rem) !important; /* ~44px to 68px generous left separation */
-  padding-right: clamp(1.5rem, 2.2vw, 2.5rem) !important;
-  padding-top: clamp(1.1rem, 1.6vw, 1.5rem) !important;
-  padding-bottom: clamp(1.1rem, 1.6vw, 1.5rem) !important;
+  min-height: 156px !important; /* +30% height from 120px */
+  padding-left: clamp(1.75rem, 2.8vw, 3rem) !important;
+  padding-right: clamp(1.25rem, 2vw, 2rem) !important;
+  padding-top: clamp(1.2rem, 1.8vw, 1.6rem) !important;
+  padding-bottom: clamp(1.2rem, 1.8vw, 1.6rem) !important;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);

@@ -3,13 +3,13 @@ import React from 'react';
 export const Slide3StatsMerged: React.FC = () => {
   return (
     <div 
-      className="slide dossier-paper text-[#1c1917] px-16 py-5 md:px-20 lg:px-24 md:py-6 font-typewriter h-full justify-between" 
+      className="slide dossier-paper text-[#1c1917] px-16 pt-3.5 pb-2 md:px-20 lg:px-24 md:pt-4 md:pb-2.5 font-typewriter h-full justify-between" 
       data-slide="3" 
       data-steps="3"
       id="slide-3"
     >
       {/* Top Secret Header */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-1.5 mb-1.5 sm:mb-2">
         <div className="flex items-center gap-2">
           <span className="font-dossier-code text-sm sm:text-base font-bold tracking-wider text-[#1c1917]">
             EVIDENCE FILE #01: NUMBERS THAT SPEAK
@@ -21,10 +21,10 @@ export const Slide3StatsMerged: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10">
+      <div className="my-auto -mt-1 sm:-mt-1.5 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10">
         
         {/* Left 8 Columns: Title & 3 Large Dossier Cards */}
-        <div className="col-span-12 md:col-span-7 lg:col-span-8 flex flex-col gap-3.5">
+        <div className="col-span-12 md:col-span-7 lg:col-span-8 flex flex-col gap-2">
           
           <div>
             <h2 className="slide-title-170 font-bold text-[#141413] font-dossier-title leading-[1.05] uppercase pen-write-anim whitespace-nowrap">
@@ -32,22 +32,22 @@ export const Slide3StatsMerged: React.FC = () => {
             </h2>
           </div>
 
-          {/* 3 Clean Dossier Cards with Generous Spacing and Balanced Line Breaks */}
-          <div className="flex flex-col gap-4 sm:gap-5 mt-2 sm:mt-3 flex-1">
+          {/* 3 Clean Dossier Cards with +30% Height and Maximized Text Size */}
+          <div className="flex flex-col gap-2.5 sm:gap-3 mt-1 flex-1">
             
             {/* Card 1: Lost the right to be stressed & Animated Counter to -68% */}
             <div 
               data-step-card="1"
-              className="step-card dossier-card py-4 sm:py-5 px-6 sm:px-8 pl-10 sm:pl-12 lg:pl-16 flex items-center gap-5 sm:gap-6 cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px] w-full"
+              className="step-card dossier-card py-4 sm:py-5 px-5 sm:px-7 pl-7 sm:pl-9 lg:pl-11 flex items-center gap-5 sm:gap-7 cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[150px] sm:min-h-[156px] w-full"
             >
               <div 
-                className="font-dossier-title font-black text-4xl sm:text-5xl md:text-6xl text-[#b91c1c] flex-shrink-0 leading-none stat-counter-num tracking-tight"
+                className="font-dossier-title font-black text-6xl sm:text-7xl md:text-[80px] lg:text-[86px] text-[#b91c1c] flex-shrink-0 leading-none stat-counter-num tracking-tight"
                 data-counter-target="-68%"
               >
                 -68%
               </div>
               <div className="text-left flex-1 min-w-0">
-                <h3 className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#141413] font-dossier-title leading-[1.25] pen-write-anim">
+                <h3 className="text-[26px] sm:text-[30px] md:text-[35px] lg:text-[39px] font-bold text-[#141413] font-dossier-title leading-[1.18] pen-write-anim">
                   <div className="write-line-row block">
                     <span className="write-line whitespace-nowrap block">You lose the right</span>
                   </div>
@@ -61,13 +61,13 @@ export const Slide3StatsMerged: React.FC = () => {
             {/* Card 2: Tsundoku */}
             <div 
               data-step-card="2"
-              className="step-card dossier-card py-4 sm:py-5 px-6 sm:px-8 pl-10 sm:pl-12 lg:pl-16 flex items-center gap-5 sm:gap-6 cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px] w-full"
+              className="step-card dossier-card py-4 sm:py-5 px-5 sm:px-7 pl-7 sm:pl-9 lg:pl-11 flex items-center gap-5 sm:gap-6 cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[150px] sm:min-h-[156px] w-full"
             >
-              <div className="font-dossier-title font-black text-xl sm:text-2xl md:text-3xl text-[#b45309] flex-shrink-0 leading-tight text-center bg-[#fef3c7] px-3.5 py-2.5 rounded border-2 border-[#b45309]/50 tracking-wider">
+              <div className="font-dossier-title font-black text-xl sm:text-2xl md:text-3xl text-[#b45309] flex-shrink-0 leading-tight text-center bg-[#fef3c7] px-3.5 py-2.5 sm:px-4 sm:py-3 rounded border-2 border-[#b45309]/60 tracking-wider">
                 TSUNDOKU
               </div>
               <div className="text-left flex-1 min-w-0">
-                <h3 className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#141413] font-dossier-title leading-[1.25] pen-write-anim">
+                <h3 className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[29px] font-bold text-[#141413] font-dossier-title leading-[1.2] pen-write-anim">
                   <div className="write-line-row block">
                     <span className="write-line whitespace-nowrap block">Buying mountains of books,</span>
                   </div>
@@ -81,13 +81,13 @@ export const Slide3StatsMerged: React.FC = () => {
             {/* Card 3: Forced to live 2 more years */}
             <div 
               data-step-card="3"
-              className="step-card dossier-card py-4 sm:py-5 px-6 sm:px-8 pl-10 sm:pl-12 lg:pl-16 flex items-center gap-5 sm:gap-6 cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px] w-full"
+              className="step-card dossier-card py-4 sm:py-5 px-5 sm:px-7 pl-7 sm:pl-9 lg:pl-11 flex items-center gap-5 sm:gap-6 cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[150px] sm:min-h-[156px] w-full"
             >
-              <div className="font-dossier-title font-black text-3xl sm:text-4xl md:text-5xl text-[#0369a1] flex-shrink-0 leading-none tracking-tight">
+              <div className="font-dossier-title font-black text-4xl sm:text-5xl md:text-6xl lg:text-[66px] text-[#0369a1] flex-shrink-0 leading-none tracking-tight">
                 +2 YEARS
               </div>
               <div className="text-left flex-1 min-w-0">
-                <h3 className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#141413] font-dossier-title leading-[1.25] pen-write-anim">
+                <h3 className="text-[21px] sm:text-[24px] md:text-[28px] lg:text-[31px] font-bold text-[#141413] font-dossier-title leading-[1.2] pen-write-anim">
                   <div className="write-line-row block">
                     <span className="write-line whitespace-nowrap block">You are forced</span>
                   </div>
