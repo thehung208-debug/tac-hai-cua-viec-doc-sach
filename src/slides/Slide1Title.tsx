@@ -26,7 +26,7 @@ export const Slide1Title: React.FC = () => {
         {/* Left Column: Spotlight Title (Revealed on Step 1) */}
         <div 
           data-step-reveal="1"
-          className="slide-1-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-all duration-700 pr-2"
+          className="slide-1-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 pr-2"
         >
           <div>
             {/* Giant Punchy Spotlight Title (Enlarged, Balanced & Clear of Image) */}
@@ -63,8 +63,8 @@ export const Slide1Title: React.FC = () => {
         </div>
 
         {/* Right Column / Center at Step 0: Evidence Board Image Frame */}
-        <div className="slide-1-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center transition-all duration-700">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-all duration-700">
+        <div className="slide-1-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700">
             <div className="dossier-paperclip"></div>
             
             {/* Header: Minimal Text, Clean Font */}

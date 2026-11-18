@@ -26,7 +26,7 @@ export const Slide8Conclusion: React.FC = () => {
         {/* Left Column: Spotlight Final Blessing (Revealed on Step 1) */}
         <div 
           data-step-reveal="1"
-          className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-all duration-700 pr-2"
+          className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 pr-2"
         >
           <div>
             {/* Giant Punchy Spotlight Blessing (4 Sequential Non-Wrapping Lines, Clear of Photo Frame) */}
@@ -53,10 +53,10 @@ export const Slide8Conclusion: React.FC = () => {
         </div>
 
         {/* Right Column / Center at Step 0: Evidence Board Image Frame with Stamp Slam */}
-        <div className="slide-8-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center transition-all duration-700">
+        <div className="slide-8-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
           <div 
             id="slide8PhotoFrame"
-            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-all duration-700"
+            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700"
           >
             <div className="dossier-paperclip"></div>
 

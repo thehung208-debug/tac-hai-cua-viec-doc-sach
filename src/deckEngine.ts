@@ -70,13 +70,19 @@ export function initDeckEngine(): () => void {
   // HANDWRITING SYNCHRONIZATION ENGINE: quill pen and text move together, slowly
   // ==========================================================================
   let activeHandwriteRaf: number | null = null;
+  let activeCounterRaf: number | null = null;
   let activeQuillEl: HTMLElement | null = null;
   let activeTextEl: HTMLElement | null = null;
+  const CLIP_HIDDEN = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
 
   function stopCurrentHandwriting() {
     if (activeHandwriteRaf !== null) {
       cancelAnimationFrame(activeHandwriteRaf);
       activeHandwriteRaf = null;
+    }
+    if (activeCounterRaf !== null) {
+      cancelAnimationFrame(activeCounterRaf);
+      activeCounterRaf = null;
     }
     if (activeQuillEl) {
       activeQuillEl.remove();
@@ -178,12 +184,13 @@ export function initDeckEngine(): () => void {
         const currentVal = Math.round(targetNum * ease);
         counterEl.textContent = `${isNegative ? '-' : ''}${currentVal}%`;
         if (p < 1) {
-          requestAnimationFrame(countFrame);
+          activeCounterRaf = requestAnimationFrame(countFrame);
         } else {
           counterEl.textContent = targetStr;
+          activeCounterRaf = null;
         }
       }
-      requestAnimationFrame(countFrame);
+      activeCounterRaf = requestAnimationFrame(countFrame);
     }
 
     // 2. Quill Handwriting Animation
@@ -206,7 +213,7 @@ export function initDeckEngine(): () => void {
     const lineEls = prepareTextLines(textEl);
 
     lineEls.forEach(l => {
-      l.style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
+      l.style.clipPath = CLIP_HIDDEN;
       l.style.opacity = '1';
     });
     textEl.style.clipPath = 'none';
@@ -217,6 +224,10 @@ export function initDeckEngine(): () => void {
       <div class="quill-pen-img"></div>
       <div class="quill-nib-glow"></div>
     `;
+    // Positioned purely with transform (GPU-composited) instead of left/top (layout every frame)
+    quill.style.left = '0px';
+    quill.style.top = '0px';
+    quill.style.opacity = '0';
     textEl.appendChild(quill);
     activeQuillEl = quill;
 
@@ -323,6 +334,27 @@ export function initDeckEngine(): () => void {
       const totalDuration = schedTime;
       const startTime = performance.now();
 
+      // Only touch the DOM when a value actually changes
+      const lastClip: string[] = lines.map(() => CLIP_HIDDEN);
+      function setLineClip(i: number, value: string) {
+        if (lastClip[i] !== value) {
+          lines[i].el.style.clipPath = value;
+          lastClip[i] = value;
+        }
+      }
+      let quillX = 0;
+      let quillY = 0;
+      let quillShown = false;
+      function placeQuill(x: number, y: number, tilt: number) {
+        quillX = x;
+        quillY = y;
+        quill.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scale(${scaleRatio}) rotate(${tilt.toFixed(2)}deg)`;
+        if (!quillShown) {
+          quill.style.opacity = '1';
+          quillShown = true;
+        }
+      }
+
       function frame(now: number) {
         if (activeTextEl !== textEl) return;
 
@@ -336,8 +368,8 @@ export function initDeckEngine(): () => void {
           textEl.style.clipPath = 'none';
           textEl.style.opacity = '1';
 
-          quill.style.transition = 'all 0.4s ease';
-          quill.style.transform = `translateY(-14px) scale(${scaleRatio * 0.9}) rotate(-22deg)`;
+          quill.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+          quill.style.transform = `translate(${quillX.toFixed(1)}px, ${(quillY - 14).toFixed(1)}px) scale(${scaleRatio * 0.9}) rotate(-22deg)`;
           quill.style.opacity = '0';
 
           setTimeout(() => {
@@ -359,18 +391,15 @@ export function initDeckEngine(): () => void {
           const seg = schedule[i];
 
           if (elapsed < seg.writeStart) {
-            lines[i].el.style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
+            setLineClip(i, CLIP_HIDDEN);
           } else if (elapsed <= seg.writeEnd) {
             // Line i is actively being written: lines before it are full, lines after it are hidden
-            for (let p = 0; p < i; p++) {
-              lines[p].el.style.clipPath = 'none';
-            }
-            for (let f = i + 1; f < lines.length; f++) {
-              lines[f].el.style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
-            }
+            for (let p = 0; p < i; p++) setLineClip(p, 'none');
+            for (let f = i + 1; f < lines.length; f++) setLineClip(f, CLIP_HIDDEN);
 
             const lineFraction = Math.max(0, Math.min(1, (elapsed - seg.writeStart) / (seg.writeEnd - seg.writeStart)));
-            lines[i].el.style.clipPath = `polygon(0 0, ${lineFraction * 100}% 0, ${lineFraction * 100}% 100%, 0 100%)`;
+            const pct = (lineFraction * 100).toFixed(2);
+            setLineClip(i, `polygon(0 0, ${pct}% 0, ${pct}% 100%, 0 100%)`);
 
             // Quill follows the line: the nib glides over each letter from left to right
             const currLine = lines[i];
@@ -378,20 +407,13 @@ export function initDeckEngine(): () => void {
             const bobY = Math.sin(lineFraction * Math.PI * 16) * 1.8;
             const tilt = -14 + Math.cos(lineFraction * Math.PI * 14) * 3;
 
-            quill.style.left = `${currentX - nibOffsetX}px`;
-            quill.style.top = `${currLine.baselineY - nibOffsetY + bobY}px`;
-            quill.style.transform = `scale(${scaleRatio}) rotate(${tilt}deg)`;
-            quill.style.opacity = '1';
+            placeQuill(currentX - nibOffsetX, currLine.baselineY - nibOffsetY + bobY, tilt);
             break;
 
           } else if (seg.returnEnd && elapsed <= seg.returnEnd) {
             // Carriage return or pause between Line i and Line i+1
-            for (let p = 0; p <= i; p++) {
-              lines[p].el.style.clipPath = 'none';
-            }
-            for (let f = i + 1; f < lines.length; f++) {
-              lines[f].el.style.clipPath = 'polygon(0 0, 0 0, 0 100%, 0 100%)';
-            }
+            for (let p = 0; p <= i; p++) setLineClip(p, 'none');
+            for (let f = i + 1; f < lines.length; f++) setLineClip(f, CLIP_HIDDEN);
 
             const p = (elapsed - seg.writeEnd) / (seg.returnEnd - seg.writeEnd);
             const currLine = lines[i];
@@ -401,9 +423,7 @@ export function initDeckEngine(): () => void {
               const hoverBob = Math.sin(p * Math.PI * 8) * 3 - 3;
               const hoverTilt = -18 + Math.sin(p * Math.PI * 6) * 4;
               const endX = currLine.startX + currLine.width;
-              quill.style.left = `${endX - nibOffsetX}px`;
-              quill.style.top = `${currLine.baselineY - nibOffsetY + hoverBob}px`;
-              quill.style.transform = `scale(${scaleRatio}) rotate(${hoverTilt}deg)`;
+              placeQuill(endX - nibOffsetX, currLine.baselineY - nibOffsetY + hoverBob, hoverTilt);
             } else {
               const ease = 0.5 - 0.5 * Math.cos(p * Math.PI);
               const endX = currLine.startX + currLine.width;
@@ -413,11 +433,8 @@ export function initDeckEngine(): () => void {
               const liftY = -12 * Math.sin(p * Math.PI);
               const tilt = -14 - 10 * Math.sin(p * Math.PI);
 
-              quill.style.left = `${currentX - nibOffsetX}px`;
-              quill.style.top = `${currentY - nibOffsetY + liftY}px`;
-              quill.style.transform = `scale(${scaleRatio}) rotate(${tilt}deg)`;
+              placeQuill(currentX - nibOffsetX, currentY - nibOffsetY + liftY, tilt);
             }
-            quill.style.opacity = '1';
             break;
           }
         }
@@ -560,11 +577,36 @@ export function initDeckEngine(): () => void {
     }
   }
 
+  // Timers for stamp/shake effects: cleared on every slide change so nothing fires late on another slide
+  const fxTimers = new Set<number>();
+  function fxTimeout(fn: () => void, ms: number) {
+    const id = window.setTimeout(() => {
+      fxTimers.delete(id);
+      fn();
+    }, ms);
+    fxTimers.add(id);
+  }
+  function clearFxTimers() {
+    fxTimers.forEach((id) => clearTimeout(id));
+    fxTimers.clear();
+  }
+
+  // One shared AudioContext (browsers cap how many can exist; creating one per stamp leaks)
+  let sharedAudioCtx: AudioContext | null = null;
+  let stampNoiseBuffer: AudioBuffer | null = null;
+  function getAudioCtx(): AudioContext | null {
+    if (sharedAudioCtx) return sharedAudioCtx;
+    const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+    if (!AudioCtx) return null;
+    sharedAudioCtx = new AudioCtx();
+    return sharedAudioCtx;
+  }
+
   function playStampAudioThud() {
     try {
-      const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
-      if (!AudioCtx) return;
-      const ctx = new AudioCtx();
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      if (ctx.state === 'suspended') ctx.resume().catch(() => {});
       const now = ctx.currentTime;
 
       // 1. Bass impact (rubber membrane thud)
@@ -583,14 +625,16 @@ export function initDeckEngine(): () => void {
       osc.stop(now + 0.2);
 
       // 2. Paper noise friction
-      const bufferSize = Math.floor(ctx.sampleRate * 0.08);
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.3));
+      if (!stampNoiseBuffer) {
+        const bufferSize = Math.floor(ctx.sampleRate * 0.08);
+        stampNoiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = stampNoiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.3));
+        }
       }
       const noise = ctx.createBufferSource();
-      noise.buffer = buffer;
+      noise.buffer = stampNoiseBuffer;
       const noiseGain = ctx.createGain();
       noiseGain.gain.setValueAtTime(0.2, now);
       noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
@@ -616,7 +660,7 @@ export function initDeckEngine(): () => void {
     stamp2.style.opacity = '0';
 
     // Stamp 1: TOP SECRET FILE (slams first)
-    setTimeout(() => {
+    fxTimeout(() => {
       const endAngle1 = (Math.random() * 4 - 8).toFixed(1); // -8deg to -4deg
       const startAngle1 = (parseFloat(endAngle1) - 10).toFixed(1);
       const midAngle1 = (parseFloat(endAngle1) + 2).toFixed(1);
@@ -630,7 +674,7 @@ export function initDeckEngine(): () => void {
 
       if (slide1) {
         slide1.classList.remove('animate-shake');
-        setTimeout(() => {
+        fxTimeout(() => {
           void slide1.offsetWidth;
           slide1.classList.add('animate-shake');
           playStampAudioThud();
@@ -639,7 +683,7 @@ export function initDeckEngine(): () => void {
     }, 120);
 
     // Stamp 2: INTERNAL USE ONLY (slams 450ms after stamp 1)
-    setTimeout(() => {
+    fxTimeout(() => {
       const endAngle2 = (Math.random() * 4 + 4).toFixed(1); // +4deg to +8deg
       const startAngle2 = (parseFloat(endAngle2) - 10).toFixed(1);
       const midAngle2 = (parseFloat(endAngle2) + 2).toFixed(1);
@@ -653,7 +697,7 @@ export function initDeckEngine(): () => void {
 
       if (slide1) {
         slide1.classList.remove('animate-shake');
-        setTimeout(() => {
+        fxTimeout(() => {
           void slide1.offsetWidth;
           slide1.classList.add('animate-shake');
           playStampAudioThud();
@@ -684,7 +728,7 @@ export function initDeckEngine(): () => void {
     // Trigger full screen/slide shake at impact time (~210ms) - identical to Slide 1
     if (slide8) {
       slide8.classList.remove('animate-shake');
-      setTimeout(() => {
+      fxTimeout(() => {
         void slide8.offsetWidth;
         slide8.classList.add('animate-shake');
         playStampAudioThud();
@@ -721,7 +765,7 @@ export function initDeckEngine(): () => void {
     updateStepVisuals(currentSlideEl);
 
     if (currentSlide === 8 && currentStep === 0) {
-      setTimeout(triggerSlide8StampAnimation, 120);
+      fxTimeout(triggerSlide8StampAnimation, 120);
     }
 
     // 6. Update browser URL hash
@@ -867,9 +911,8 @@ export function initDeckEngine(): () => void {
         rgba(90, 65, 35, 0) ${Math.max(hl * 4, d * 0.55)}px,
         rgba(90, 65, 35, 0.16) ${Math.max(hl * 5, d * 1.3)}px)`;
 
-      // Soft shadow the lifted flap casts onto the front page
-      const blur = 6 + 22 * strength;
-      flapWrap.style.filter = `drop-shadow(${(-nx * 4 * strength).toFixed(2)}px ${(-ny * 4 * strength + 3 * strength).toFixed(2)}px ${blur.toFixed(1)}px rgba(30, 18, 8, ${(0.5 * strength).toFixed(3)}))`;
+      // The flap's shadow onto the front page is a fixed drop-shadow in CSS (.flip-flap-wrap):
+      // rewriting the filter every frame forced a full re-raster of a viewport-sized layer.
 
       // 3. Cast shadow on the page underneath, hugging the fold line
       const shadowW = Math.max(18, Math.min(160, d * 0.45)) * (0.4 + 0.6 * strength);
@@ -923,6 +966,7 @@ export function initDeckEngine(): () => void {
     if (isPageFlipping) return;
 
     stopCurrentHandwriting();
+    clearFxTimers();
 
     const oldSlideNum = currentSlide;
     const targetSlideNum = n;
@@ -1199,7 +1243,13 @@ export function initDeckEngine(): () => void {
 
   return () => {
     stopCurrentHandwriting();
+    clearFxTimers();
     if (activeCurlCleanup) activeCurlCleanup();
+    if (sharedAudioCtx) {
+      sharedAudioCtx.close().catch(() => {});
+      sharedAudioCtx = null;
+      stampNoiseBuffer = null;
+    }
     window.removeEventListener('keydown', handleKeyDown);
     document.removeEventListener('click', handleDocClick);
     if (slidesWrapper) {
