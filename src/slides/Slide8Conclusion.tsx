@@ -33,13 +33,13 @@ export const Slide8Conclusion: React.FC = () => {
             <div className="write-line-row block">
               <span className="write-line whitespace-nowrap block">I Hope You Catch</span>
             </div>
-            <div className="write-line-row block mt-0.5 sm:mt-1">
+            <div className="write-line-row block mt-1 sm:mt-1.5">
               <span className="write-line whitespace-nowrap block">the Reading Disease</span>
             </div>
-            <div className="write-line-row block mt-2 sm:mt-3">
+            <div className="write-line-row block mt-1 sm:mt-1.5">
               <span className="write-line text-[#b91c1c] whitespace-nowrap block">And Never</span>
             </div>
-            <div className="flex items-center gap-3 sm:gap-4 mt-0.5 sm:mt-1 flex-nowrap w-fit">
+            <div className="flex items-start gap-3 sm:gap-4 mt-1 sm:mt-1.5 flex-nowrap w-fit">
               <div className="write-line-row !w-fit !inline-block">
                 <span className="write-line text-[#b91c1c] underline decoration-[#b91c1c] decoration-8 whitespace-nowrap block">
                   Find a Cure!
@@ -49,7 +49,7 @@ export const Slide8Conclusion: React.FC = () => {
               {/* Circular Rubber Stamp: Forrest Gump (Deck Finale Slam) */}
               <div 
                 id="slide8ForrestGumpStamp"
-                className="stamp-circle-realistic shadow-lg shrink-0 ml-1 sm:ml-2"
+                className="stamp-circle-realistic shadow-lg shrink-0 ml-1 sm:ml-2 -mt-[26px]"
               >
                 <div className="stamp-circle-inner">
                   <div className="stamp-circle-name">FORREST GUMP</div>
