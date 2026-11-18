@@ -48,12 +48,12 @@ export const Slide4ToolsMerged: React.FC = () => {
                   PAPER BOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[23px] lg:text-[25px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-lg sm:text-xl md:text-[22px] lg:text-[24px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
                 <div className="write-line-row block">
-                  <span className="write-line whitespace-nowrap block">Addictive paper smell,</span>
+                  <span className="write-line whitespace-nowrap block">Addictive smell,</span>
                 </div>
-                <div className="write-line-row block mt-0.5">
-                  <span className="write-line whitespace-nowrap block text-[#b45309]">free gym weights in your backpack</span>
+                <div className="write-line-row block mt-0.5 sm:mt-1">
+                  <span className="write-line whitespace-nowrap block text-[#b45309] font-bold">free gym weights in your backpack</span>
                 </div>
               </div>
             </div>
@@ -71,12 +71,12 @@ export const Slide4ToolsMerged: React.FC = () => {
                   E-BOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[23px] lg:text-[25px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-lg sm:text-xl md:text-[22px] lg:text-[24px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">A library in your pocket,</span>
                 </div>
-                <div className="write-line-row block mt-0.5">
-                  <span className="write-line whitespace-nowrap block text-[#0369a1]">"Low Battery!" on the final page</span>
+                <div className="write-line-row block mt-0.5 sm:mt-1">
+                  <span className="write-line whitespace-nowrap block text-[#0369a1] font-bold">"Low Battery!" on the final page</span>
                 </div>
               </div>
             </div>
@@ -94,12 +94,12 @@ export const Slide4ToolsMerged: React.FC = () => {
                   AUDIOBOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[23px] lg:text-[25px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-lg sm:text-xl md:text-[22px] lg:text-[24px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">A strong sleeping pill</span>
                 </div>
-                <div className="write-line-row block mt-0.5">
-                  <span className="write-line whitespace-nowrap block text-[#15803d]">while you wash dishes or drive</span>
+                <div className="write-line-row block mt-0.5 sm:mt-1">
+                  <span className="write-line whitespace-nowrap block text-[#15803d] font-bold">while you wash dishes or drive</span>
                 </div>
               </div>
             </div>
