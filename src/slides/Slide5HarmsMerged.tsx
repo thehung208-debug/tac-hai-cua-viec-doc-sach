@@ -45,20 +45,20 @@ export const Slide5HarmsMerged: React.FC = () => {
             </h2>
           </div>
 
-          {/* 7 Clean Compact Dossier Cards with Stable Placement Slots */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 mt-1">
+          {/* 7 Clean Compact Dossier Cards with Generous Spacing and Stable Placement Slots */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-y-5 gap-x-4 sm:gap-x-5 mt-2.5 sm:mt-3.5">
             {harms.map((h, idx) => (
               <div
                 key={h.id}
-                className={`step-card-slot min-h-[58px] sm:min-h-[64px] flex items-stretch ${
+                className={`step-card-slot min-h-[62px] sm:min-h-[68px] flex items-stretch ${
                   idx === 6 ? 'sm:col-span-2' : ''
                 }`}
               >
                 <div
                   data-step-card={h.id}
-                  className="step-card dossier-card py-2.5 sm:py-3 px-3.5 sm:px-4.5 flex items-center gap-3 cursor-pointer border-2 border-[#1c1917] w-full"
+                  className="step-card dossier-card py-3 sm:py-3.5 px-4 sm:px-5 flex items-center gap-3.5 cursor-pointer border-2 border-[#1c1917] w-full"
                 >
-                  <span className="dossier-tag text-xs sm:text-sm bg-[#1c1917] text-[#e6dcc8] flex-shrink-0 font-bold font-dossier-code px-2.5 py-0.5">
+                  <span className="dossier-tag text-xs sm:text-sm bg-[#1c1917] text-[#e6dcc8] flex-shrink-0 font-bold font-dossier-code px-2.5 py-1">
                     #{h.id.toString().padStart(2, '0')}
                   </span>
                   <div className="text-left min-w-0 flex-1">

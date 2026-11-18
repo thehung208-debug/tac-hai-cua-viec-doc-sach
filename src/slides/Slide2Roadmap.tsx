@@ -48,8 +48,8 @@ export const Slide2Roadmap: React.FC = () => {
             </h2>
           </div>
 
-          {/* 5 Bold Dossier Step Cards without Sub-hints */}
-          <div className="flex flex-col gap-2.5 sm:gap-3.5 mt-1">
+          {/* 5 Bold Dossier Step Cards with Clear Generous Separation */}
+          <div className="flex flex-col gap-3.5 sm:gap-4.5 mt-2 sm:mt-3">
             {stages.map((s) => (
               <div 
                 key={s.step}

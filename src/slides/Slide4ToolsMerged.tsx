@@ -32,8 +32,8 @@ export const Slide4ToolsMerged: React.FC = () => {
             </h2>
           </div>
 
-          {/* 3 Step Cards with Prominent Large Category Titles Inline with Badges */}
-          <div className="flex flex-col gap-3.5 sm:gap-4 mt-1 flex-1">
+          {/* 3 Step Cards with Generous Spacing and Inline Category Badges */}
+          <div className="flex flex-col gap-4 sm:gap-5 mt-2 sm:mt-3 flex-1">
             
             {/* Medium 1: Paper book */}
             <div 

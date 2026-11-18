@@ -55,8 +55,8 @@ export const Slide7HowToInfect: React.FC = () => {
             </h2>
           </div>
 
-          {/* 4 Prominent Horizontal Dossier Strips (Main Content Only, Sub-notes Removed) */}
-          <div className="flex flex-col gap-3 sm:gap-3.5 mt-1.5 flex-1 justify-between w-full">
+          {/* 4 Prominent Horizontal Dossier Strips with Generous Spacing */}
+          <div className="flex flex-col gap-4 sm:gap-4.5 mt-2.5 sm:mt-3 flex-1 justify-between w-full">
             {steps.map((s, idx) => (
               <div 
                 key={s.num}
