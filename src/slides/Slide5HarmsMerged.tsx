@@ -47,12 +47,10 @@ export const Slide5HarmsMerged: React.FC = () => {
 
           {/* 7 Clean Compact Dossier Cards with Generous Spacing and Stable Placement Slots */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3.5 sm:gap-y-4 gap-x-4 sm:gap-x-5 mt-2 sm:mt-3">
-            {harms.map((h, idx) => (
+            {harms.map((h) => (
               <div
                 key={h.id}
-                className={`step-card-slot min-h-[66px] sm:min-h-[72px] flex items-stretch ${
-                  idx === 6 ? 'sm:col-span-2' : ''
-                }`}
+                className="step-card-slot min-h-[66px] sm:min-h-[72px] flex items-stretch"
               >
                 <div
                   data-step-card={h.id}
