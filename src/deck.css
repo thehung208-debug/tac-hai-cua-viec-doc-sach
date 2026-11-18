@@ -224,18 +224,7 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   }
 }
 
-/* Slide 6 Header Clearance: Compact margin to give comfortable breathing room above navigation bar */
-#slide-6 > .border-b-2 {
-  margin-bottom: 0.5rem !important;
-  padding-bottom: 0.25rem !important;
-}
 
-@media (min-width: 768px) {
-  #slide-6 > .border-b-2 {
-    margin-bottom: 0.75rem !important;
-    padding-bottom: 0.35rem !important;
-  }
-}
 
 /* Slide 7 Title: Enlarged 120% (~72px - 74px, Single Horizontal Line) */
 .slide-7-title {
@@ -1913,12 +1902,14 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 }
 
 /* ==========================================================================
-   SLIDE 6 CARDS (Compact Height, Tight Line Spacing, Bottom Button Clearance)
+   SLIDE 6 CARDS ENHANCEMENTS (Enlarged Height, Maximized Typography, Centered)
    ========================================================================== */
 #slide-6 .step-card {
-  padding-top: clamp(0.6rem, 1vw, 0.85rem) !important;
-  padding-bottom: clamp(0.6rem, 1vw, 0.85rem) !important;
-  min-height: clamp(88px, 10.5vh, 102px) !important;
+  padding-top: clamp(1rem, 1.4vw, 1.35rem) !important;
+  padding-bottom: clamp(1rem, 1.4vw, 1.35rem) !important;
+  padding-left: clamp(1.5rem, 2.2vw, 2.5rem) !important;
+  padding-right: clamp(1.5rem, 2.2vw, 2.5rem) !important;
+  min-height: clamp(136px, 15vh, 156px) !important; /* +20-30% height, matching Slide 3 */
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1936,30 +1927,12 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 }
 
 #slide-6 .write-line-row {
-  line-height: 1.15 !important;
+  line-height: 1.18 !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
 #slide-6 .write-line-row + .write-line-row {
-  margin-top: 2px !important;
-}
-
-.slide-6-pill-tag,
-.slide-6-pill-dark {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#slide-6 .step-card.step-spotlight .slide-6-pill-dark {
-  background-color: #b91c1c !important;
-  color: #fff !important;
-  box-shadow: 2px 2px 0px rgba(28, 25, 23, 0.8);
-}
-
-#slide-6 .step-card.step-spotlight .slide-6-pill-tag {
-  background-color: #1c1917 !important;
-  color: #fef08a !important;
-  border-color: #1c1917 !important;
-  box-shadow: 2px 2px 0px rgba(185, 28, 28, 0.3);
+  margin-top: 4px !important;
 }
 
