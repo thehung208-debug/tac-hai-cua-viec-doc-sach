@@ -21,13 +21,13 @@ export const Slide4ToolsMerged: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1280px] mx-auto w-full z-10">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10">
         
-        {/* Left 7 Columns: Title & 3 Weapons */}
-        <div className="col-span-12 md:col-span-7 flex flex-col gap-3.5">
+        {/* Left 8 Columns: Title & 3 Weapons */}
+        <div className="col-span-12 md:col-span-7 lg:col-span-8 flex flex-col gap-3.5">
           
           <div>
-            <h2 className="slide-title-150 font-bold text-[#141413] font-dossier-title leading-[1.05] uppercase pen-write-anim whitespace-nowrap">
+            <h2 className="slide-4-title font-bold text-[#141413] font-dossier-title leading-[1.05] uppercase pen-write-anim whitespace-nowrap">
               3 Dangerous Tools
             </h2>
           </div>
@@ -108,9 +108,9 @@ export const Slide4ToolsMerged: React.FC = () => {
 
         </div>
 
-        {/* Right 5 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[390px] md:max-w-[400px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
+        {/* Right 4 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
+        <div className="col-span-12 md:col-span-5 lg:col-span-4 flex flex-col items-center md:items-end justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[340px] sm:max-w-[360px] md:max-w-[380px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
             <div className="dossier-paperclip"></div>
             
             {/* Clean Header: Minimal Text, Larger Font */}
