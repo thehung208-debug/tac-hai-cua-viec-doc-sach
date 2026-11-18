@@ -48,12 +48,11 @@ export const Slide6WhyQuit: React.FC = () => {
                   FAKE SMART PERSON
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[23px] lg:text-[25px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
                 <div className="write-line-row block">
-                  <span className="write-line whitespace-nowrap block">Buying books to look smart,</span>
-                </div>
-                <div className="write-line-row block mt-0.5">
-                  <span className="write-line whitespace-nowrap block text-[#b45309]">then never reading them</span>
+                  <span className="write-line whitespace-nowrap block">
+                    Buying books to look smart, <span className="text-[#b45309]">then never reading them</span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -71,12 +70,11 @@ export const Slide6WhyQuit: React.FC = () => {
                   15-SECOND EMPIRE
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[23px] lg:text-[25px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
                 <div className="write-line-row block">
-                  <span className="write-line whitespace-nowrap block">Losing the war</span>
-                </div>
-                <div className="write-line-row block mt-0.5">
-                  <span className="write-line whitespace-nowrap block text-[#b91c1c]">against 15-second videos</span>
+                  <span className="write-line whitespace-nowrap block">
+                    Losing the war <span className="text-[#b91c1c]">against 15-second videos</span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -94,12 +92,11 @@ export const Slide6WhyQuit: React.FC = () => {
                   SLAVE TO THE BOOK
                 </span>
               </div>
-              <div className="text-lg sm:text-xl md:text-[23px] lg:text-[25px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
+              <div className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-2.5 pen-write-anim text-left leading-snug">
                 <div className="write-line-row block">
-                  <span className="write-line whitespace-nowrap block">Forcing yourself to finish</span>
-                </div>
-                <div className="write-line-row block mt-0.5">
-                  <span className="write-line whitespace-nowrap block text-[#0369a1]">every single boring word</span>
+                  <span className="write-line whitespace-nowrap block">
+                    Forcing yourself to finish <span className="text-[#0369a1]">every single boring word</span>
+                  </span>
                 </div>
               </div>
             </div>
