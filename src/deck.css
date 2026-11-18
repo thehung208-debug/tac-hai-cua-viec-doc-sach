@@ -1878,10 +1878,44 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 }
 
 /* ==========================================================================
-   SLIDE 4 & SLIDE 6 CARDS (Compact Height, Tight Line Spacing, Bottom Button Clearance)
+   SLIDE 4 WEAPONS CARDS ENHANCEMENTS (+20% Height, Maximized Typography, Centered)
    ========================================================================== */
-#slide-6 .step-card,
 #slide-4 .step-card {
+  padding-top: clamp(1rem, 1.4vw, 1.35rem) !important;
+  padding-bottom: clamp(1rem, 1.4vw, 1.35rem) !important;
+  padding-left: clamp(1.5rem, 2.2vw, 2.5rem) !important;
+  padding-right: clamp(1.5rem, 2.2vw, 2.5rem) !important;
+  min-height: clamp(120px, 13.5vh, 142px) !important; /* +20% height from ~117px */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#slide-4 .step-card:hover {
+  transform: translateX(4px) translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(28, 25, 23, 0.9);
+}
+
+#slide-4 .step-card.step-spotlight {
+  transform: translateX(6px) scale(1.015) !important;
+  box-shadow: 7px 7px 0px rgba(28, 25, 23, 0.9) !important;
+  border-width: 2.5px !important;
+}
+
+#slide-4 .write-line-row {
+  line-height: 1.18 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+#slide-4 .write-line-row + .write-line-row {
+  margin-top: 4px !important;
+}
+
+/* ==========================================================================
+   SLIDE 6 CARDS (Compact Height, Tight Line Spacing, Bottom Button Clearance)
+   ========================================================================== */
+#slide-6 .step-card {
   padding-top: clamp(0.6rem, 1vw, 0.85rem) !important;
   padding-bottom: clamp(0.6rem, 1vw, 0.85rem) !important;
   min-height: clamp(88px, 10.5vh, 102px) !important;
@@ -1890,28 +1924,24 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
               border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#slide-6 .step-card:hover,
-#slide-4 .step-card:hover {
+#slide-6 .step-card:hover {
   transform: translateX(4px) translateY(-2px);
   box-shadow: 6px 6px 0px rgba(28, 25, 23, 0.9);
 }
 
-#slide-6 .step-card.step-spotlight,
-#slide-4 .step-card.step-spotlight {
+#slide-6 .step-card.step-spotlight {
   transform: translateX(6px) scale(1.015) !important;
   box-shadow: 7px 7px 0px rgba(28, 25, 23, 0.9) !important;
   border-width: 2.5px !important;
 }
 
-#slide-6 .write-line-row,
-#slide-4 .write-line-row {
+#slide-6 .write-line-row {
   line-height: 1.15 !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-#slide-6 .write-line-row + .write-line-row,
-#slide-4 .write-line-row + .write-line-row {
+#slide-6 .write-line-row + .write-line-row {
   margin-top: 2px !important;
 }
 

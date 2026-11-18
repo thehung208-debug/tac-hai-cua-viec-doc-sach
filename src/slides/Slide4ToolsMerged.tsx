@@ -9,7 +9,7 @@ export const Slide4ToolsMerged: React.FC = () => {
       id="slide-4"
     >
       {/* Top Secret Header */}
-      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2.5 mb-4 sm:mb-6">
+      <div className="flex justify-between items-center z-10 border-b-2 border-[#1c1917] pb-2 mb-2 sm:mb-3">
         <div className="flex items-center gap-2">
           <span className="font-dossier-code text-sm sm:text-base font-bold tracking-wider text-[#1c1917]">
             EVIDENCE FILE #02: THREE DANGEROUS TOOLS
@@ -20,11 +20,11 @@ export const Slide4ToolsMerged: React.FC = () => {
         </div>
       </div>
 
-      {/* Main Grid: 2 Columns */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10">
+      {/* Main Grid: 2 Columns - Centered in Slide */}
+      <div className="my-auto grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10">
         
         {/* Left 8 Columns: Title & 3 Weapons */}
-        <div className="col-span-12 md:col-span-7 lg:col-span-8 flex flex-col gap-3.5">
+        <div className="col-span-12 md:col-span-7 lg:col-span-8 flex flex-col gap-3">
           
           <div>
             <h2 className="slide-4-title font-bold text-[#141413] font-dossier-title leading-[1.05] uppercase pen-write-anim whitespace-nowrap">
@@ -32,27 +32,27 @@ export const Slide4ToolsMerged: React.FC = () => {
             </h2>
           </div>
 
-          {/* 3 Step Cards with Compact Height and Tight Line Spacing */}
-          <div className="flex flex-col gap-2.5 sm:gap-3 mt-1.5 sm:mt-2 flex-1">
+          {/* 3 Step Cards with +20% Height and Maximized Typography */}
+          <div className="flex flex-col gap-2.5 sm:gap-3 mt-1 sm:mt-1.5 flex-1">
             
             {/* Medium 1: Paper book */}
             <div 
               data-step-card="1"
-              className="step-card dossier-card py-2.5 sm:py-3 px-5 sm:px-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[96px] sm:min-h-[100px]"
+              className="step-card dossier-card py-3.5 sm:py-4 md:py-4.5 px-6 sm:px-7 md:px-8 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[136px] sm:min-h-[142px]"
             >
-              <div className="flex items-center gap-3">
-                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#b45309] text-white flex-shrink-0 px-2.5 py-1 shadow-sm font-dossier-code">
+              <div className="flex items-center gap-3.5">
+                <span className="dossier-tag text-xs sm:text-sm md:text-base font-bold bg-[#b45309] text-white flex-shrink-0 px-3 py-1.5 shadow-sm font-dossier-code">
                   WEAPON #01
                 </span>
-                <span className="text-xl sm:text-2xl md:text-[28px] font-black font-dossier-title text-[#b45309] uppercase tracking-wide">
+                <span className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-black font-dossier-title text-[#b45309] uppercase tracking-wide">
                   PAPER BOOK
                 </span>
               </div>
-              <div className="text-[17px] sm:text-[19px] md:text-[21px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-1.5 pen-write-anim text-left leading-tight">
+              <div className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#292524] font-typewriter mt-2 sm:mt-2.5 pen-write-anim text-left leading-tight">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">Addictive smell,</span>
                 </div>
-                <div className="write-line-row block mt-0 sm:mt-0.5">
+                <div className="write-line-row block mt-0.5 sm:mt-1">
                   <span className="write-line whitespace-nowrap block text-[#b45309] font-bold">free gym weights in your backpack</span>
                 </div>
               </div>
@@ -61,21 +61,21 @@ export const Slide4ToolsMerged: React.FC = () => {
             {/* Medium 2: E-Reader */}
             <div 
               data-step-card="2"
-              className="step-card dossier-card py-2.5 sm:py-3 px-5 sm:px-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[96px] sm:min-h-[100px]"
+              className="step-card dossier-card py-3.5 sm:py-4 md:py-4.5 px-6 sm:px-7 md:px-8 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[136px] sm:min-h-[142px]"
             >
-              <div className="flex items-center gap-3">
-                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#0369a1] text-white flex-shrink-0 px-2.5 py-1 shadow-sm font-dossier-code">
+              <div className="flex items-center gap-3.5">
+                <span className="dossier-tag text-xs sm:text-sm md:text-base font-bold bg-[#0369a1] text-white flex-shrink-0 px-3 py-1.5 shadow-sm font-dossier-code">
                   WEAPON #02
                 </span>
-                <span className="text-xl sm:text-2xl md:text-[28px] font-black font-dossier-title text-[#0369a1] uppercase tracking-wide">
+                <span className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-black font-dossier-title text-[#0369a1] uppercase tracking-wide">
                   E-BOOK
                 </span>
               </div>
-              <div className="text-[17px] sm:text-[19px] md:text-[21px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-1.5 pen-write-anim text-left leading-tight">
+              <div className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#292524] font-typewriter mt-2 sm:mt-2.5 pen-write-anim text-left leading-tight">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">A library in your pocket,</span>
                 </div>
-                <div className="write-line-row block mt-0 sm:mt-0.5">
+                <div className="write-line-row block mt-0.5 sm:mt-1">
                   <span className="write-line whitespace-nowrap block text-[#0369a1] font-bold">"Low Battery!" on the final page</span>
                 </div>
               </div>
@@ -84,21 +84,21 @@ export const Slide4ToolsMerged: React.FC = () => {
             {/* Medium 3: Audiobook */}
             <div 
               data-step-card="3"
-              className="step-card dossier-card py-2.5 sm:py-3 px-5 sm:px-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[96px] sm:min-h-[100px]"
+              className="step-card dossier-card py-3.5 sm:py-4 md:py-4.5 px-6 sm:px-7 md:px-8 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[136px] sm:min-h-[142px]"
             >
-              <div className="flex items-center gap-3">
-                <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#15803d] text-white flex-shrink-0 px-2.5 py-1 shadow-sm font-dossier-code">
+              <div className="flex items-center gap-3.5">
+                <span className="dossier-tag text-xs sm:text-sm md:text-base font-bold bg-[#15803d] text-white flex-shrink-0 px-3 py-1.5 shadow-sm font-dossier-code">
                   WEAPON #03
                 </span>
-                <span className="text-xl sm:text-2xl md:text-[28px] font-black font-dossier-title text-[#15803d] uppercase tracking-wide">
+                <span className="text-2xl sm:text-3xl md:text-[32px] lg:text-[35px] font-black font-dossier-title text-[#15803d] uppercase tracking-wide">
                   AUDIOBOOK
                 </span>
               </div>
-              <div className="text-[17px] sm:text-[19px] md:text-[21px] lg:text-[22px] font-bold text-[#292524] font-typewriter mt-1.5 pen-write-anim text-left leading-tight">
+              <div className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#292524] font-typewriter mt-2 sm:mt-2.5 pen-write-anim text-left leading-tight">
                 <div className="write-line-row block">
                   <span className="write-line whitespace-nowrap block">A strong sleeping pill</span>
                 </div>
-                <div className="write-line-row block mt-0 sm:mt-0.5">
+                <div className="write-line-row block mt-0.5 sm:mt-1">
                   <span className="write-line whitespace-nowrap block text-[#15803d] font-bold">while you wash dishes or drive</span>
                 </div>
               </div>
