@@ -71,10 +71,14 @@ export const Slide7HowToInfect: React.FC = () => {
                 </span>
                 <div className="flex text-left items-center flex-1 min-w-0">
                   <div 
-                    className="font-dossier-title font-black text-xl sm:text-2xl md:text-3xl uppercase tracking-wide pen-write-anim leading-tight"
+                    className="font-dossier-title font-black text-lg sm:text-xl md:text-[22px] lg:text-[25px] uppercase tracking-wide pen-write-anim leading-tight whitespace-nowrap"
                     style={{ color: s.color }}
                   >
-                    {s.topic}
+                    <div className="write-line-row block">
+                      <span className="write-line whitespace-nowrap block">
+                        {s.topic}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
