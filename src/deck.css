@@ -108,26 +108,30 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   }
 }
 
-/* Slide 2 Roadmap Title (Enlarged 170% to ~82px, 2 Bold Lines) */
+/* Slide Title Enlarged 170% (~82px: 170% of 48px) */
+.slide-title-170,
 .slide-2-title {
   font-size: clamp(2.5rem, 4.8vw, 4.2rem) !important;
-  line-height: 1.04 !important;
+  line-height: 1.05 !important;
   letter-spacing: -0.5px !important;
 }
 
 @media (min-width: 640px) {
+  .slide-title-170,
   .slide-2-title {
     font-size: clamp(2.8rem, 5vw, 4.6rem) !important;
   }
 }
 
 @media (min-width: 768px) {
+  .slide-title-170,
   .slide-2-title {
     font-size: clamp(3.2rem, 5.2vw, 4.9rem) !important;
   }
 }
 
 @media (min-width: 1024px) {
+  .slide-title-170,
   .slide-2-title {
     font-size: clamp(3.6rem, 5.2vw, 5.125rem) !important; /* ~82px: 170% scaling */
   }
