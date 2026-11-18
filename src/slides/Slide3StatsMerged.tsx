@@ -21,7 +21,7 @@ export const Slide3StatsMerged: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto -mt-1 sm:-mt-1.5 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10">
+      <div className="my-auto -mt-1 sm:-mt-1.5 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10 slide-3-main-grid">
         
         {/* Left 8 Columns: Title & 3 Large Dossier Cards */}
         <div className="col-span-12 md:col-span-7 lg:col-span-8 flex flex-col gap-2">
