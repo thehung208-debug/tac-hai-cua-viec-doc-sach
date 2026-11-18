@@ -35,8 +35,16 @@ export const Slide2Roadmap: React.FC = () => {
         <div className="col-span-12 md:col-span-7 flex flex-col gap-3">
           
           <div>
-            <h2 className="slide-main-title font-bold text-[#141413] leading-[1.12] font-dossier-title uppercase pen-write-anim whitespace-nowrap">
-              5 Parts of the Dark Truth
+            <h2 
+              className="slide-2-title font-bold text-[#141413] leading-[1.04] font-dossier-title uppercase pen-write-anim"
+              data-pause-between-lines="true"
+            >
+              <div className="write-line-row">
+                <span className="write-line">5 PARTS OF THE</span>
+              </div>
+              <div className="write-line-row">
+                <span className="write-line">DARK TRUTH</span>
+              </div>
             </h2>
           </div>
 

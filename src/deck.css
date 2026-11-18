@@ -79,7 +79,7 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
    SLIDE MAIN TITLES (ENLARGED 150%)
    ========================================================================== */
 
-/* Universal slide title for Slides 2 through 7 (Fits on 1 single line without wrapping) */
+/* Universal slide title for Slides 3 through 7 (Fits on 1 single line without wrapping) */
 .slide-main-title {
   font-size: clamp(1.6rem, 2.7vw, 2.65rem) !important;
   line-height: 1.12 !important;
@@ -105,6 +105,31 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   .slide-main-title {
     font-size: clamp(2.2rem, 2.9vw, 3.15rem) !important; /* ~48px - fits on 1 line across all viewports */
     white-space: nowrap !important;
+  }
+}
+
+/* Slide 2 Roadmap Title (Enlarged 170% to ~82px, 2 Bold Lines) */
+.slide-2-title {
+  font-size: clamp(2.5rem, 4.8vw, 4.2rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.5px !important;
+}
+
+@media (min-width: 640px) {
+  .slide-2-title {
+    font-size: clamp(2.8rem, 5vw, 4.6rem) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .slide-2-title {
+    font-size: clamp(3.2rem, 5.2vw, 4.9rem) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide-2-title {
+    font-size: clamp(3.6rem, 5.2vw, 5.125rem) !important; /* ~82px: 170% scaling */
   }
 }
 
