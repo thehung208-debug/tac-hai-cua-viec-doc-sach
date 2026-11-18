@@ -21,7 +21,7 @@ export const Slide1Title: React.FC = () => {
       </div>
 
       {/* Main Slide Content: Dynamic 2-Phase Grid */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-6xl mx-auto w-full z-10 relative">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1380px] mx-auto w-full z-10 relative">
         
         {/* Left Column: Spotlight Title (Revealed on Step 1) */}
         <div 
@@ -29,9 +29,9 @@ export const Slide1Title: React.FC = () => {
           className="slide-1-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 pr-2"
         >
           <div>
-            {/* Giant Punchy Spotlight Title (Enlarged, Balanced & Clear of Image) */}
+            {/* Giant Punchy Spotlight Title (Enlarged 120%, Bold & Grand Headline) */}
             <h1 
-              className="slide-1-hero-title font-black text-[#141413] leading-[1.05] font-dossier-title tracking-tight uppercase pen-write-anim"
+              className="slide-1-hero-title font-black text-[#141413] leading-[1.04] font-dossier-title tracking-tight uppercase pen-write-anim"
               data-pause-between-lines="true"
             >
               <div className="write-line-row">
@@ -63,8 +63,8 @@ export const Slide1Title: React.FC = () => {
         </div>
 
         {/* Right Column / Center at Step 0: Evidence Board Image Frame */}
-        <div className="slide-1-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700">
+        <div className="slide-1-image-col col-span-12 md:col-span-5 flex flex-col items-center justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[380px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700">
             <div className="dossier-paperclip"></div>
             
             {/* Header: Minimal Text, Clean Font */}
@@ -78,7 +78,7 @@ export const Slide1Title: React.FC = () => {
             </div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[460px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide1-claymation.webp"
                 alt="Classified Evidence: Agent Forrest Gump"

@@ -34,7 +34,7 @@ export const Slide5HarmsMerged: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1380px] mx-auto w-full">
         
         {/* Left 7 Columns: Title & 7 Harms in a clean 2-column layout */}
         <div className="col-span-12 md:col-span-7 flex flex-col gap-3">
@@ -46,17 +46,17 @@ export const Slide5HarmsMerged: React.FC = () => {
           </div>
 
           {/* 7 Clean Compact Dossier Cards with Stable Placement Slots */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5 mt-1">
             {harms.map((h, idx) => (
               <div
                 key={h.id}
-                className={`step-card-slot min-h-[56px] sm:min-h-[60px] flex items-stretch ${
+                className={`step-card-slot min-h-[58px] sm:min-h-[64px] flex items-stretch ${
                   idx === 6 ? 'sm:col-span-2' : ''
                 }`}
               >
                 <div
                   data-step-card={h.id}
-                  className="step-card dossier-card py-2.5 sm:py-3 px-3.5 sm:px-4 flex items-center gap-3 cursor-pointer border-2 border-[#1c1917] w-full"
+                  className="step-card dossier-card py-2.5 sm:py-3 px-3.5 sm:px-4.5 flex items-center gap-3 cursor-pointer border-2 border-[#1c1917] w-full"
                 >
                   <span className="dossier-tag text-xs sm:text-sm bg-[#1c1917] text-[#e6dcc8] flex-shrink-0 font-bold font-dossier-code px-2.5 py-0.5">
                     #{h.id.toString().padStart(2, '0')}
@@ -74,8 +74,8 @@ export const Slide5HarmsMerged: React.FC = () => {
         </div>
 
         {/* Right 5 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[285px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
+        <div className="col-span-12 md:col-span-5 flex flex-col items-center justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[380px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
             <div className="dossier-paperclip"></div>
             
             {/* Clean Header: Minimal Text, Larger Font */}
@@ -89,7 +89,7 @@ export const Slide5HarmsMerged: React.FC = () => {
             </div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[460px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide5-claymation.webp"
                 alt="Brain Anatomy & Harms Illustration"

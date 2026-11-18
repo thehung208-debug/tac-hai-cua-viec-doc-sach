@@ -21,7 +21,7 @@ export const Slide8Conclusion: React.FC = () => {
       </div>
 
       {/* Main Slide Content: Dynamic 2-Phase Grid */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-6xl mx-auto w-full z-10 relative">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1380px] mx-auto w-full z-10 relative">
         
         {/* Left Column: Spotlight Final Blessing (Revealed on Step 1) */}
         <div 
@@ -29,7 +29,7 @@ export const Slide8Conclusion: React.FC = () => {
           className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 pr-2"
         >
           <div>
-            {/* Giant Punchy Spotlight Blessing (4 Sequential Non-Wrapping Lines, Clear of Photo Frame) */}
+            {/* Giant Punchy Spotlight Blessing (Enlarged 120%, 4 Sequential Non-Wrapping Lines) */}
             <h2 
               className="slide-8-hero-title font-black text-[#141413] leading-[1.12] font-dossier-title tracking-tight uppercase pen-write-anim"
               data-pause-between-lines="true"
@@ -53,15 +53,15 @@ export const Slide8Conclusion: React.FC = () => {
         </div>
 
         {/* Right Column / Center at Step 0: Evidence Board Image Frame with Stamp Slam */}
-        <div className="slide-8-image-col col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
+        <div className="slide-8-image-col col-span-12 md:col-span-5 flex flex-col items-center justify-center">
           <div 
             id="slide8PhotoFrame"
-            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[280px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700"
+            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[380px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700"
           >
             <div className="dossier-paperclip"></div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[460px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide8-claymation.webp"
                 alt="Case Closed Illustration"

@@ -108,53 +108,53 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   }
 }
 
-/* Slide 1 Cover Hero Title (Balanced & Proportional, Never Overlaps Photo Frame) */
+/* Slide 1 Cover Hero Title (Enlarged 120%, Bold & Grand Headline) */
 .slide-1-hero-title {
-  font-size: clamp(2.5rem, 5vw, 4.2rem) !important;
-  line-height: 1.05 !important;
+  font-size: clamp(3rem, 5.8vw, 5.2rem) !important;
+  line-height: 1.04 !important;
   letter-spacing: -1px !important;
 }
 
 @media (min-width: 640px) {
   .slide-1-hero-title {
-    font-size: clamp(2.8rem, 5.2vw, 4.5rem) !important;
+    font-size: clamp(3.4rem, 6vw, 5.5rem) !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-1-hero-title {
-    font-size: clamp(3.2rem, 5.4vw, 4.8rem) !important;
+    font-size: clamp(3.8rem, 6.2vw, 5.8rem) !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-1-hero-title {
-    font-size: clamp(3.5rem, 5.2vw, 5rem) !important; /* ~78px - 82px */
+    font-size: clamp(4.2rem, 6.2vw, 6.1rem) !important; /* ~96px - 100px: 120% magnification! */
   }
 }
 
 /* Slide 8 Conclusion Hero Title (4 Sequential Non-Wrapping Lines, Clear of Photo Frame) */
 .slide-8-hero-title {
-  font-size: clamp(1.75rem, 3.2vw, 2.75rem) !important;
+  font-size: clamp(2rem, 3.8vw, 3.3rem) !important;
   line-height: 1.12 !important;
   letter-spacing: -0.5px !important;
 }
 
 @media (min-width: 640px) {
   .slide-8-hero-title {
-    font-size: clamp(1.95rem, 3.3vw, 2.95rem) !important;
+    font-size: clamp(2.3rem, 3.9vw, 3.5rem) !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-8-hero-title {
-    font-size: clamp(2.15rem, 3.4vw, 3.15rem) !important;
+    font-size: clamp(2.5rem, 4vw, 3.75rem) !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-8-hero-title {
-    font-size: clamp(2.35rem, 3.4vw, 3.35rem) !important; /* ~52px - 54px */
+    font-size: clamp(2.8rem, 4vw, 4rem) !important; /* ~62px - 64px: 120% magnification! */
   }
 }
 
@@ -1177,12 +1177,12 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 #slide-1[data-current-step="1"] .slide-1-image-col {
   grid-column: span 5 / span 12 !important;
   display: flex !important;
-  justify-content: flex-end !important;
+  justify-content: center !important;
   align-items: center !important;
 }
 
 #slide-1[data-current-step="1"] .evidence-photo-frame {
-  max-width: 270px !important;
+  max-width: 360px !important;
   transform: scale(1) rotate(1deg) !important;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -1228,12 +1228,12 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 #slide-8[data-current-step="1"] .slide-8-image-col {
   grid-column: span 5 / span 12 !important;
   display: flex !important;
-  justify-content: flex-end !important;
+  justify-content: center !important;
   align-items: center !important;
 }
 
 #slide-8[data-current-step="1"] .evidence-photo-frame {
-  max-width: 270px !important;
+  max-width: 360px !important;
   transform: scale(1) rotate(1deg) !important;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }

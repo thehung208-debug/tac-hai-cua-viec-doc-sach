@@ -21,7 +21,7 @@ export const Slide6WhyQuit: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 items-center max-w-6xl mx-auto w-full z-10">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1380px] mx-auto w-full z-10">
         
         {/* Left 7 Columns: Title & 3 Reasons */}
         <div className="col-span-12 md:col-span-7 flex flex-col gap-3.5">
@@ -33,12 +33,12 @@ export const Slide6WhyQuit: React.FC = () => {
           </div>
 
           {/* 3 Step Cards with Prominent Large Category Titles Inline with Badges */}
-          <div className="flex flex-col gap-3 sm:gap-3.5 mt-1 flex-1">
+          <div className="flex flex-col gap-3.5 sm:gap-4 mt-1 flex-1">
             
             {/* Card 1 */}
             <div 
               data-step-card="1"
-              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[110px]"
+              className="step-card dossier-card p-5.5 sm:p-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px]"
             >
               <div className="flex items-center gap-3.5">
                 <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#b45309] text-white flex-shrink-0">
@@ -61,7 +61,7 @@ export const Slide6WhyQuit: React.FC = () => {
             {/* Card 2 */}
             <div 
               data-step-card="2"
-              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[110px]"
+              className="step-card dossier-card p-5.5 sm:p-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px]"
             >
               <div className="flex items-center gap-3.5">
                 <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#b91c1c] text-white flex-shrink-0">
@@ -84,7 +84,7 @@ export const Slide6WhyQuit: React.FC = () => {
             {/* Card 3 */}
             <div 
               data-step-card="3"
-              className="step-card dossier-card p-5 sm:p-5.5 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[110px]"
+              className="step-card dossier-card p-5.5 sm:p-6 flex flex-col justify-center cursor-pointer border-2 border-[#1c1917] flex-1 min-h-[115px] sm:min-h-[120px]"
             >
               <div className="flex items-center gap-3.5">
                 <span className="dossier-tag text-xs sm:text-sm font-bold bg-[#0369a1] text-white flex-shrink-0">
@@ -109,8 +109,8 @@ export const Slide6WhyQuit: React.FC = () => {
         </div>
 
         {/* Right 5 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[270px] sm:max-w-[285px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
+        <div className="col-span-12 md:col-span-5 flex flex-col items-center justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[380px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
             <div className="dossier-paperclip"></div>
             
             {/* Clean Header: Minimal Text, Larger Font */}
@@ -124,7 +124,7 @@ export const Slide6WhyQuit: React.FC = () => {
             </div>
 
             {/* True 3:4 Uncropped Image Frame */}
-            <div className="w-full aspect-[3/4] max-h-[390px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
+            <div className="w-full aspect-[3/4] max-h-[460px] rounded border border-[#1c1917] overflow-hidden relative bg-[#1c1917]">
               <img
                 src="/assets/slide6-claymation.webp"
                 alt="Cat Sleeping on Book Illustration"
