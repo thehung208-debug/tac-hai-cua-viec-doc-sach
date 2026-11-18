@@ -21,12 +21,12 @@ export const Slide8Conclusion: React.FC = () => {
       </div>
 
       {/* Main Slide Content: Dynamic 2-Phase Grid */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1380px] mx-auto w-full z-10 relative">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1280px] mx-auto w-full z-10 relative">
         
         {/* Left Column: Spotlight Final Blessing (Revealed on Step 1) */}
         <div 
           data-step-reveal="1"
-          className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 md:pl-8 lg:pl-12 xl:pl-16"
+          className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 md:pl-3 lg:pl-6"
         >
           <div>
             {/* Giant Punchy Spotlight Blessing (Enlarged 130%, 4 Sequential Non-Wrapping Lines) */}
@@ -56,7 +56,7 @@ export const Slide8Conclusion: React.FC = () => {
         <div className="slide-8-image-col col-span-12 md:col-span-5 flex flex-col items-center justify-center">
           <div 
             id="slide8PhotoFrame"
-            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[380px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700"
+            className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[390px] md:max-w-[400px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative transition-[transform,max-width,box-shadow] duration-700"
           >
             <div className="dossier-paperclip"></div>
 

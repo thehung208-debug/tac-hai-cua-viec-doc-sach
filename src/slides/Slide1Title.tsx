@@ -21,7 +21,7 @@ export const Slide1Title: React.FC = () => {
       </div>
 
       {/* Main Slide Content: Dynamic 2-Phase Grid */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1380px] mx-auto w-full z-10 relative">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1280px] mx-auto w-full z-10 relative">
         
         {/* Left Column: Spotlight Title (Revealed on Step 1) */}
         <div 
