@@ -54,7 +54,7 @@ export const Slide2Roadmap: React.FC = () => {
               <div 
                 key={s.step}
                 data-step-card={s.step}
-                className="step-card dossier-card py-2.5 sm:py-3 px-4 sm:px-5 flex items-center gap-3.5 sm:gap-4.5 cursor-pointer border-2 border-[#1c1917] w-full max-w-[410px] min-h-[54px] sm:min-h-[58px]"
+                className="step-card dossier-card py-2.5 sm:py-3 px-4 sm:px-5 flex items-center gap-3.5 sm:gap-4.5 cursor-pointer border-2 border-[#1c1917] w-full max-w-[468px] sm:max-w-[476px] min-h-[54px] sm:min-h-[58px]"
               >
                 <span className="dossier-tag text-sm sm:text-base md:text-lg bg-[#1c1917] text-[#e6dcc8] flex-shrink-0 font-bold font-dossier-code px-3 py-1.5 shadow-sm">
                   {s.num}
