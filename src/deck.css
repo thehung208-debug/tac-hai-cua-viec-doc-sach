@@ -137,6 +137,35 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   }
 }
 
+/* Slide 7 Title: Enlarged >120% (~125%-130%), Single Horizontal Line */
+.slide-7-title {
+  font-size: clamp(2rem, 2.8vw, 3.55rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.5px !important;
+  white-space: nowrap !important;
+}
+
+@media (min-width: 640px) {
+  .slide-7-title {
+    font-size: clamp(2.2rem, 2.9vw, 3.65rem) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .slide-7-title {
+    font-size: clamp(2.4rem, 2.95vw, 3.75rem) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide-7-title {
+    font-size: clamp(2.55rem, 2.95vw, 3.85rem) !important; /* ~60px - 62px: >120% scaling, 1 line */
+    white-space: nowrap !important;
+  }
+}
+
 /* Slide Title Enlarged 170% (~82px: 170% of 48px) */
 .slide-title-170,
 .slide-2-title {
