@@ -44,10 +44,10 @@ export const Slide7HowToInfect: React.FC = () => {
       </div>
 
       {/* Main Grid: 2 Columns */}
-      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-8 md:gap-10 items-center max-w-[1280px] mx-auto w-full z-10">
+      <div className="my-auto pt-2 sm:pt-4 grid grid-cols-12 gap-6 md:gap-8 items-center max-w-[1300px] mx-auto w-full z-10">
         
-        {/* Left 7 Columns: Title & 4 Steps Grid (No Scrollbar!) */}
-        <div className="col-span-12 md:col-span-7 flex flex-col gap-3.5">
+        {/* Left 8 Columns: Title & 4 Steps Grid (No Scrollbar!) */}
+        <div className="col-span-12 md:col-span-7 lg:col-span-8 flex flex-col gap-3.5">
           
           <div>
             <h2 className="slide-7-title font-bold text-[#141413] font-dossier-title leading-[1.08] uppercase pen-write-anim whitespace-nowrap">
@@ -56,22 +56,22 @@ export const Slide7HowToInfect: React.FC = () => {
           </div>
 
           {/* 4 Prominent Horizontal Dossier Strips with Generous Spacing */}
-          <div className="flex flex-col gap-4 sm:gap-4.5 mt-2.5 sm:mt-3 flex-1 justify-between w-full">
+          <div className="flex flex-col gap-3.5 sm:gap-4 mt-2 sm:mt-2.5 flex-1 justify-between w-full">
             {steps.map((s, idx) => (
               <div 
                 key={s.num}
                 data-step-card={idx + 1}
-                className="step-card dossier-card py-3.5 sm:py-4 px-5 sm:px-6 flex items-center gap-4 sm:gap-5 cursor-pointer border-2 border-[#1c1917] min-h-[76px] sm:min-h-[82px] w-full"
+                className="step-card dossier-card py-3 sm:py-3.5 px-5 sm:px-6 flex items-center gap-4 sm:gap-5 cursor-pointer border-2 border-[#1c1917] min-h-[74px] sm:min-h-[80px] w-full"
               >
                 <span 
-                  className="dossier-tag text-xs sm:text-sm font-bold flex-shrink-0 text-white px-3 sm:px-3.5 py-1.5 shadow-sm font-dossier-code tracking-wider"
+                  className="dossier-tag text-sm sm:text-base font-bold flex-shrink-0 text-white px-3.5 sm:px-4 py-2 shadow-sm font-dossier-code tracking-wider"
                   style={{ backgroundColor: s.color }}
                 >
                   STEP {s.num}
                 </span>
                 <div className="flex text-left items-center flex-1 min-w-0">
                   <div 
-                    className="font-dossier-title font-black text-lg sm:text-xl md:text-[22px] lg:text-[25px] uppercase tracking-wide pen-write-anim leading-tight whitespace-nowrap"
+                    className="slide-7-card-topic font-dossier-title font-black uppercase tracking-wide pen-write-anim leading-tight whitespace-nowrap"
                     style={{ color: s.color }}
                   >
                     <div className="write-line-row block">
@@ -87,9 +87,9 @@ export const Slide7HowToInfect: React.FC = () => {
 
         </div>
 
-        {/* Right 5 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
-        <div className="col-span-12 md:col-span-5 flex flex-col items-center md:items-end justify-center">
-          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[360px] sm:max-w-[390px] md:max-w-[400px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
+        {/* Right 4 Columns: Classified Evidence Board (True 3:4 Aspect Ratio, Zero Crop) */}
+        <div className="col-span-12 md:col-span-5 lg:col-span-4 flex flex-col items-center md:items-end justify-center">
+          <div className="dossier-card evidence-photo-frame p-2.5 sm:p-3 rotate-1 max-w-[340px] sm:max-w-[360px] md:max-w-[380px] w-full bg-[#fbf5e8] border-2 border-[#1c1917] shadow-xl relative">
             <div className="dossier-paperclip"></div>
             
             {/* Clean Header: Minimal Text, Larger Font */}

@@ -224,9 +224,9 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   }
 }
 
-/* Slide 7 Title: Enlarged >120% (~125%-130%), Single Horizontal Line */
+/* Slide 7 Title: Enlarged 120% (~72px - 74px, Single Horizontal Line) */
 .slide-7-title {
-  font-size: clamp(2rem, 2.8vw, 3.55rem) !important;
+  font-size: clamp(2.4rem, 3.4vw, 4.25rem) !important;
   line-height: 1.08 !important;
   letter-spacing: -0.5px !important;
   white-space: nowrap !important;
@@ -234,23 +234,30 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 
 @media (min-width: 640px) {
   .slide-7-title {
-    font-size: clamp(2.2rem, 2.9vw, 3.65rem) !important;
+    font-size: clamp(2.65rem, 3.5vw, 4.4rem) !important;
     white-space: nowrap !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-7-title {
-    font-size: clamp(2.4rem, 2.95vw, 3.75rem) !important;
+    font-size: clamp(2.85rem, 3.55vw, 4.5rem) !important;
     white-space: nowrap !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-7-title {
-    font-size: clamp(2.55rem, 2.95vw, 3.85rem) !important; /* ~60px - 62px: >120% scaling, 1 line */
+    font-size: clamp(3.05rem, 3.55vw, 4.62rem) !important; /* ~72px - 74px: 120% scaling */
     white-space: nowrap !important;
   }
+}
+
+/* Slide 7 Card Topic: Enlarged 120% (~30px: 120% of 25px) */
+.slide-7-card-topic {
+  font-size: clamp(1.35rem, 1.8vw, 1.88rem) !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
 }
 
 /* Slide Title Enlarged 170% (~82px: 170% of 48px) */
