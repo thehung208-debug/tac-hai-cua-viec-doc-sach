@@ -1704,3 +1704,28 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   line-height: 1.15 !important;
   white-space: nowrap !important;
 }
+
+/* ==========================================================================
+   SLIDE 3 CRAZY NUMBERS CARDS ENHANCEMENTS (Generous Padding Left to separate text & frame)
+   ========================================================================== */
+#slide-3 .step-card {
+  padding-left: clamp(2.75rem, 4vw, 4.25rem) !important; /* ~44px to 68px generous left separation */
+  padding-right: clamp(1.5rem, 2.2vw, 2.5rem) !important;
+  padding-top: clamp(1.1rem, 1.6vw, 1.5rem) !important;
+  padding-bottom: clamp(1.1rem, 1.6vw, 1.5rem) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#slide-3 .step-card:hover {
+  transform: translateX(4px) translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(28, 25, 23, 0.9);
+}
+
+#slide-3 .step-card.step-spotlight {
+  transform: translateX(6px) scale(1.015) !important;
+  box-shadow: 7px 7px 0px rgba(28, 25, 23, 0.9) !important;
+  border-width: 2.5px !important;
+}
+
