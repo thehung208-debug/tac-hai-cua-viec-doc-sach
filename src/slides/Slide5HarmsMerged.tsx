@@ -2,13 +2,13 @@ import React from 'react';
 
 export const Slide5HarmsMerged: React.FC = () => {
   const harms = [
-    { id: 1, title: 'Sleeping so well you sleep forever' },
-    { id: 2, title: 'Knowing too much' },
-    { id: 3, title: 'A dangerously big vocabulary' },
-    { id: 4, title: 'A wild, uncontrollable imagination' },
-    { id: 5, title: 'A domino disaster for money & free time' },
-    { id: 6, title: 'You can never become a thief' },
-    { id: 7, title: 'Hiding in the bathroom all day' }
+    { id: 1, line1: 'Sleeping so well', line2: 'you sleep forever' },
+    { id: 2, line1: 'Knowing too much', line2: null },
+    { id: 3, line1: 'A dangerously', line2: 'big vocabulary' },
+    { id: 4, line1: 'A wild, uncontrollable', line2: 'imagination' },
+    { id: 5, line1: 'A domino disaster', line2: 'for money & free time' },
+    { id: 6, line1: 'You can never', line2: 'become a thief' },
+    { id: 7, line1: 'Hiding in the bathroom all day', line2: null }
   ];
 
   return (
@@ -46,24 +46,37 @@ export const Slide5HarmsMerged: React.FC = () => {
           </div>
 
           {/* 7 Clean Compact Dossier Cards with Generous Spacing and Stable Placement Slots */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-y-5 gap-x-4 sm:gap-x-5 mt-2.5 sm:mt-3.5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3.5 sm:gap-y-4 gap-x-4 sm:gap-x-5 mt-2 sm:mt-3">
             {harms.map((h, idx) => (
               <div
                 key={h.id}
-                className={`step-card-slot min-h-[62px] sm:min-h-[68px] flex items-stretch ${
+                className={`step-card-slot min-h-[66px] sm:min-h-[72px] flex items-stretch ${
                   idx === 6 ? 'sm:col-span-2' : ''
                 }`}
               >
                 <div
                   data-step-card={h.id}
-                  className="step-card dossier-card py-3 sm:py-3.5 px-4 sm:px-5 flex items-center gap-3.5 cursor-pointer border-2 border-[#1c1917] w-full"
+                  className="step-card dossier-card py-2.5 sm:py-3 px-3.5 sm:px-4.5 flex items-center gap-3 cursor-pointer border-2 border-[#1c1917] w-full"
                 >
                   <span className="dossier-tag text-xs sm:text-sm bg-[#1c1917] text-[#e6dcc8] flex-shrink-0 font-bold font-dossier-code px-2.5 py-1">
                     #{h.id.toString().padStart(2, '0')}
                   </span>
                   <div className="text-left min-w-0 flex-1">
-                    <div className="font-dossier-title font-bold text-sm sm:text-base md:text-lg text-[#b91c1c] leading-snug pen-write-anim">
-                      {h.title}
+                    <div className="slide-5-harm-title font-dossier-title font-bold text-[#b91c1c] leading-snug pen-write-anim">
+                      {h.line2 ? (
+                        <>
+                          <div className="write-line-row block">
+                            <span className="write-line whitespace-nowrap block">{h.line1}</span>
+                          </div>
+                          <div className="write-line-row block mt-0.5">
+                            <span className="write-line whitespace-nowrap block">{h.line2}</span>
+                          </div>
+                        </>
+                      ) : (
+                        <div className="write-line-row block">
+                          <span className="write-line whitespace-nowrap block">{h.line1}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

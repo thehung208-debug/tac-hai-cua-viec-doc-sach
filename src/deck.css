@@ -1527,11 +1527,38 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4) !important;
 }
 
-#slide-5 .step-card.step-spotlight .font-dossier-title {
+#slide-5 .step-card.step-spotlight .font-dossier-title,
+#slide-5 .step-card.step-spotlight .slide-5-harm-title {
   font-size: clamp(1.6rem, 2.5vw, 2.35rem) !important;
   line-height: 1.3 !important;
   font-weight: 800 !important;
   color: #b91c1c !important;
+}
+
+/* Slide 5 Harms Docked Card Title: Enlarged and cleanly fitted without overflow */
+.slide-5-harm-title {
+  font-size: clamp(1.1rem, 1.38vw, 1.4rem) !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  color: #b91c1c !important;
+}
+
+@media (min-width: 640px) {
+  .slide-5-harm-title {
+    font-size: clamp(1.15rem, 1.42vw, 1.45rem) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .slide-5-harm-title {
+    font-size: clamp(1.2rem, 1.48vw, 1.5rem) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide-5-harm-title {
+    font-size: clamp(1.25rem, 1.5vw, 1.52rem) !important; /* ~24px: bold, large & clear */
+  }
 }
 
 /* Docked Card returning to its anchored grid position */
