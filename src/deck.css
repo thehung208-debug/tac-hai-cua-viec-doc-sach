@@ -629,12 +629,24 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
+  padding-left: clamp(4rem, 6.5vw, 7rem) !important;
+  padding-right: clamp(4rem, 6.5vw, 7rem) !important;
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+  box-sizing: border-box !important;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transform-origin: 0% 50% !important; /* STRICTLY ANCHORED AT LEFT SPINE (Top-Left and Bottom-Left corners remain permanently fixed) */
   transition: opacity 0.2s ease;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .slide {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
 }
 
 .slide.active {

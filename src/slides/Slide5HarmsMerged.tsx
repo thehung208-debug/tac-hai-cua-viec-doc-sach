@@ -13,7 +13,7 @@ export const Slide5HarmsMerged: React.FC = () => {
 
   return (
     <div 
-      className="slide dossier-paper text-[#1c1917] px-8 py-5 md:px-12 md:py-6 font-typewriter h-full justify-between relative overflow-hidden" 
+      className="slide dossier-paper text-[#1c1917] px-16 py-5 md:px-20 lg:px-24 md:py-6 font-typewriter h-full justify-between relative overflow-hidden" 
       data-slide="5" 
       data-steps="8"
       id="slide-5"

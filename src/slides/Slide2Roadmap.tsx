@@ -11,7 +11,7 @@ export const Slide2Roadmap: React.FC = () => {
 
   return (
     <div 
-      className="slide dossier-paper text-[#1c1917] px-8 py-5 md:px-12 md:py-6 font-typewriter h-full justify-between" 
+      className="slide dossier-paper text-[#1c1917] px-16 py-5 md:px-20 lg:px-24 md:py-6 font-typewriter h-full justify-between" 
       data-slide="2" 
       data-steps="5"
       id="slide-2"
