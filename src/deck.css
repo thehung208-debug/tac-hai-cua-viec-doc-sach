@@ -108,6 +108,35 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   }
 }
 
+/* Slide Title Enlarged 150% (~72px: 150% of 48px, Single Horizontal Line) */
+.slide-title-150 {
+  font-size: clamp(2.2rem, 3.8vw, 4.25rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.5px !important;
+  white-space: nowrap !important;
+}
+
+@media (min-width: 640px) {
+  .slide-title-150 {
+    font-size: clamp(2.4rem, 4vw, 4.35rem) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .slide-title-150 {
+    font-size: clamp(2.6rem, 4.2vw, 4.45rem) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide-title-150 {
+    font-size: clamp(2.85rem, 4.2vw, 4.5rem) !important; /* ~72px: 150% scaling */
+    white-space: nowrap !important;
+  }
+}
+
 /* Slide Title Enlarged 170% (~82px: 170% of 48px) */
 .slide-title-170,
 .slide-2-title {
