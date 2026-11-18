@@ -197,7 +197,7 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 
 /* Slide 6 Title: Enlarged 120% (~65px - 76px, Single Horizontal Line) */
 .slide-6-title {
-  font-size: clamp(2.4rem, 4.4vw, 4.85rem) !important;
+  font-size: clamp(2rem, 3.4vw, 3.6rem) !important;
   line-height: 1.05 !important;
   letter-spacing: -0.5px !important;
   white-space: nowrap !important;
@@ -205,22 +205,35 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 
 @media (min-width: 640px) {
   .slide-6-title {
-    font-size: clamp(2.6rem, 4.5vw, 4.95rem) !important;
+    font-size: clamp(2.2rem, 3.6vw, 3.8rem) !important;
     white-space: nowrap !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-6-title {
-    font-size: clamp(2.85rem, 4.6vw, 5.05rem) !important;
+    font-size: clamp(2.4rem, 3.8vw, 4.0rem) !important;
     white-space: nowrap !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-6-title {
-    font-size: clamp(3.1rem, 4.6vw, 5.25rem) !important;
+    font-size: clamp(2.6rem, 4vw, 4.2rem) !important;
     white-space: nowrap !important;
+  }
+}
+
+/* Slide 6 Header Clearance: Compact margin to give comfortable breathing room above navigation bar */
+#slide-6 > .border-b-2 {
+  margin-bottom: 0.5rem !important;
+  padding-bottom: 0.25rem !important;
+}
+
+@media (min-width: 768px) {
+  #slide-6 > .border-b-2 {
+    margin-bottom: 0.75rem !important;
+    padding-bottom: 0.35rem !important;
   }
 }
 
