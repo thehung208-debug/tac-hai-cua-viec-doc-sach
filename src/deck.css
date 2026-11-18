@@ -220,28 +220,28 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   }
 }
 
-/* Slide 8 Conclusion Hero Title (4 Sequential Non-Wrapping Lines, Clear of Photo Frame) */
+/* Slide 8 Conclusion Hero Title (Enlarged 130%, 4 Sequential Non-Wrapping Lines) */
 .slide-8-hero-title {
-  font-size: clamp(2rem, 3.8vw, 3.3rem) !important;
-  line-height: 1.12 !important;
+  font-size: clamp(2.3rem, 4.1vw, 3.65rem) !important;
+  line-height: 1.1 !important;
   letter-spacing: -0.5px !important;
 }
 
 @media (min-width: 640px) {
   .slide-8-hero-title {
-    font-size: clamp(2.3rem, 3.9vw, 3.5rem) !important;
+    font-size: clamp(2.6rem, 4.3vw, 3.95rem) !important;
   }
 }
 
 @media (min-width: 768px) {
   .slide-8-hero-title {
-    font-size: clamp(2.5rem, 4vw, 3.75rem) !important;
+    font-size: clamp(2.85rem, 4.5vw, 4.25rem) !important;
   }
 }
 
 @media (min-width: 1024px) {
   .slide-8-hero-title {
-    font-size: clamp(2.8rem, 4vw, 4rem) !important; /* ~62px - 64px: 120% magnification! */
+    font-size: clamp(3.1rem, 4.6vw, 4.5rem) !important; /* ~72px: 130% scaling! */
   }
 }
 

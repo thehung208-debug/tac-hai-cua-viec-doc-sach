@@ -26,25 +26,25 @@ export const Slide8Conclusion: React.FC = () => {
         {/* Left Column: Spotlight Final Blessing (Revealed on Step 1) */}
         <div 
           data-step-reveal="1"
-          className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 pr-2"
+          className="slide-8-title-col col-span-12 md:col-span-7 flex flex-col justify-center gap-4 text-left transition-[opacity,transform] duration-700 md:pl-8 lg:pl-12 xl:pl-16"
         >
           <div>
-            {/* Giant Punchy Spotlight Blessing (Enlarged 120%, 4 Sequential Non-Wrapping Lines) */}
+            {/* Giant Punchy Spotlight Blessing (Enlarged 130%, 4 Sequential Non-Wrapping Lines) */}
             <h2 
-              className="slide-8-hero-title font-black text-[#141413] leading-[1.12] font-dossier-title tracking-tight uppercase pen-write-anim"
+              className="slide-8-hero-title font-black text-[#141413] leading-[1.1] font-dossier-title tracking-tight uppercase pen-write-anim"
               data-pause-between-lines="true"
             >
-              <div className="write-line-row">
-                <span className="write-line whitespace-nowrap">I Hope You Catch</span>
+              <div className="write-line-row block">
+                <span className="write-line whitespace-nowrap block">I Hope You Catch</span>
               </div>
-              <div className="write-line-row">
-                <span className="write-line whitespace-nowrap">the Reading Disease</span>
+              <div className="write-line-row block mt-0.5 sm:mt-1">
+                <span className="write-line whitespace-nowrap block">the Reading Disease</span>
               </div>
-              <div className="write-line-row mt-2">
-                <span className="write-line text-[#b91c1c] whitespace-nowrap">And Never</span>
+              <div className="write-line-row block mt-2 sm:mt-3">
+                <span className="write-line text-[#b91c1c] whitespace-nowrap block">And Never</span>
               </div>
-              <div className="write-line-row">
-                <span className="write-line text-[#b91c1c] underline decoration-[#b91c1c] decoration-8 whitespace-nowrap">
+              <div className="write-line-row block mt-0.5 sm:mt-1">
+                <span className="write-line text-[#b91c1c] underline decoration-[#b91c1c] decoration-8 whitespace-nowrap block">
                   Find a Cure!
                 </span>
               </div>
