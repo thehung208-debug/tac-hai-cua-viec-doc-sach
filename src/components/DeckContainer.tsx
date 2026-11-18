@@ -165,6 +165,22 @@ export const DeckContainer: React.FC = () => {
 
       </div>
 
+      {/* Top Secret Evidence Lightbox Modal */}
+      <div
+        id="deck-lightbox-modal"
+        className="deck-lightbox-modal"
+        aria-hidden="true"
+      >
+        <div className="deck-lightbox-frame" id="deck-lightbox-frame">
+          <img
+            id="deck-lightbox-img"
+            className="deck-lightbox-img"
+            src=""
+            alt="Evidence Detail"
+          />
+        </div>
+      </div>
+
     </div>
   );
 };

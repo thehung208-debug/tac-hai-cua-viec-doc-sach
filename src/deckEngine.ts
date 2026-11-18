@@ -1048,6 +1048,7 @@ export function initDeckEngine(): () => void {
     clearFxTimers();
     resetSlide1Stamps();
     resetSlide8ForrestGumpStamp();
+    closeLightbox();
 
     const oldSlideNum = currentSlide;
     const targetSlideNum = n;
@@ -1163,6 +1164,28 @@ export function initDeckEngine(): () => void {
     }
   }
 
+  let isLightboxOpen = false;
+
+  function openLightbox(imgSrc: string) {
+    const modal = document.getElementById('deck-lightbox-modal');
+    const img = document.getElementById('deck-lightbox-img') as HTMLImageElement | null;
+    if (!modal || !img) return;
+
+    img.src = imgSrc;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    isLightboxOpen = true;
+  }
+
+  function closeLightbox() {
+    const modal = document.getElementById('deck-lightbox-modal');
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    isLightboxOpen = false;
+  }
+
   // Bind globals for inline onclick attributes
   window.jumpToSlide = (n: number, e?: Event) => {
     if (e) e.stopPropagation();
@@ -1177,6 +1200,8 @@ export function initDeckEngine(): () => void {
   window.toggleFullscreen = toggleFullscreen;
   window.toggleSlidePicker = toggleSlidePicker;
   window.closeSlidePicker = closeSlidePicker;
+  (window as any).openLightbox = openLightbox;
+  (window as any).closeLightbox = closeLightbox;
   window.setSlideStep = (step: number) => {
     currentStep = step;
     updateStepVisuals(getCurrentSlideEl());
@@ -1185,6 +1210,14 @@ export function initDeckEngine(): () => void {
   // Keyboard controls
   const handleKeyDown = (e: KeyboardEvent) => {
     if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement)?.tagName)) return;
+
+    if (isLightboxOpen) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeLightbox();
+      }
+      return;
+    }
 
     switch (e.key) {
       case 'ArrowRight':
@@ -1235,26 +1268,86 @@ export function initDeckEngine(): () => void {
 
   // Close popover when clicking anywhere else & handle card click
   const handleDocClick = (e: MouseEvent) => {
+    if (isLightboxOpen) {
+      const frame = document.getElementById('deck-lightbox-frame');
+      if (frame && !frame.contains(e.target as Node)) {
+        closeLightbox();
+      }
+      return;
+    }
+
     const picker = document.getElementById('slide-picker');
     const counterBtn = document.getElementById('counter');
     if (picker && !picker.contains(e.target as Node) && e.target !== counterBtn) {
       closeSlidePicker();
     }
 
-    // Direct card click support (Spotlight / Toggle)
-    const cardTarget = (e.target as HTMLElement).closest<HTMLElement>('[data-step-card]');
-    if (cardTarget) {
-      const slideEl = getCurrentSlideEl();
-      if (slideEl && slideEl.contains(cardTarget)) {
-        const cardStep = parseInt(cardTarget.getAttribute('data-step-card') || '0', 10);
-        const maxSteps = getSlideMaxSteps(slideEl);
-        if (currentStep === cardStep) {
-          currentStep = maxSteps;
-        } else {
-          currentStep = cardStep;
-        }
-        updateStepVisuals(slideEl);
+    const targetEl = e.target as HTMLElement;
+
+    // Ignore clicks on control bar and navigation buttons
+    if (targetEl.closest('.control-bar, .standalone-fullscreen-btn, .slide-picker-popover, #fullscreen-btn, #prev-slide-btn, #next-slide-btn')) {
+      return;
+    }
+
+    const slideEl = getCurrentSlideEl();
+    if (!slideEl) return;
+
+    // Slide 5 Special Triggers:
+    // - khi card 4 của slide 5 đang chạy spotlight, nếu click vào màn hình thì hình ảnh số 1 sẽ hiện ra
+    // - khi card 7 của slide 5 đang chạy spotlight, nếu click vào màn hình thì hình ảnh số 2 sẽ hiện ra
+    if (currentSlide === 5) {
+      if (currentStep === 4) {
+        openLightbox('/assets/popup-slide5-card4.webp');
+        return;
       }
+      if (currentStep === 7) {
+        openLightbox('/assets/popup-slide5-card7.webp');
+        return;
+      }
+    }
+
+    // Slide 7 Special Triggers:
+    // - khi click vào card 3 của slide 7 thì hình ảnh số 3 hiện ra
+    // - khi click vào card 2 của slide 7 thì ảnh số 4 hiện ra
+    if (currentSlide === 7) {
+      const card3 = targetEl.closest<HTMLElement>('[data-step-card="3"]');
+      if (card3 && slideEl.contains(card3)) {
+        currentStep = 3;
+        updateStepVisuals(slideEl);
+        openLightbox('/assets/popup-slide7-card3.webp');
+        return;
+      }
+
+      const card2 = targetEl.closest<HTMLElement>('[data-step-card="2"]');
+      if (card2 && slideEl.contains(card2)) {
+        currentStep = 2;
+        updateStepVisuals(slideEl);
+        openLightbox('/assets/popup-slide7-card2.webp');
+        return;
+      }
+
+      // If card 3 or card 2 is currently running spotlight and user clicks screen:
+      if (currentStep === 3) {
+        openLightbox('/assets/popup-slide7-card3.webp');
+        return;
+      }
+      if (currentStep === 2) {
+        openLightbox('/assets/popup-slide7-card2.webp');
+        return;
+      }
+    }
+
+    // Direct card click support for all other cards (Spotlight / Toggle)
+    const cardTarget = targetEl.closest<HTMLElement>('[data-step-card]');
+    if (cardTarget && slideEl.contains(cardTarget)) {
+      const cardStep = parseInt(cardTarget.getAttribute('data-step-card') || '0', 10);
+      const maxSteps = getSlideMaxSteps(slideEl);
+      if (currentStep === cardStep) {
+        currentStep = maxSteps;
+      } else {
+        currentStep = cardStep;
+      }
+      updateStepVisuals(slideEl);
     }
   };
 
@@ -1267,7 +1360,8 @@ export function initDeckEngine(): () => void {
   let touchStartTime = 0;
 
   const handlePointerDown = (e: PointerEvent) => {
-    if ((e.target as HTMLElement).closest('button, .clickable-counter, .slide-picker-popover, .step-card, .book-corner-peel')) {
+    if (isLightboxOpen) return;
+    if ((e.target as HTMLElement).closest('button, .clickable-counter, .slide-picker-popover, .step-card, .book-corner-peel, .deck-lightbox-modal')) {
       return;
     }
     touchStartX = e.clientX;
@@ -1327,6 +1421,7 @@ export function initDeckEngine(): () => void {
     clearFxTimers();
     resetSlide1Stamps();
     resetSlide8ForrestGumpStamp();
+    closeLightbox();
     if (activeCurlCleanup) activeCurlCleanup();
     if (sharedAudioCtx) {
       sharedAudioCtx.close().catch(() => {});

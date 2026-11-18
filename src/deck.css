@@ -1936,3 +1936,65 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   margin-top: 4px !important;
 }
 
+/* ==========================================================================
+   TOP SECRET CASE EVIDENCE LIGHTBOX MODAL
+   ========================================================================== */
+.deck-lightbox-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 1000000 !important; /* Above slide 5 spotlight backdrop (99990) and spotlight card (99999) */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(15, 12, 10, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
+  padding: 1.5rem;
+}
+
+.deck-lightbox-modal.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.deck-lightbox-frame {
+  position: relative !important;
+  background-color: #fbf5e8 !important;
+  border: 3px solid #1c1917 !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.75), 
+    8px 8px 0px #1c1917 !important;
+  max-width: min(92vw, 860px) !important;
+  max-height: 88vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: scale(0.9) !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: default !important;
+}
+
+.deck-lightbox-modal.active .deck-lightbox-frame {
+  transform: scale(1) !important;
+}
+
+.deck-lightbox-img {
+  max-width: 100% !important;
+  max-height: calc(88vh - 20px) !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 4px !important;
+  display: block !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
