@@ -1807,30 +1807,6 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   white-space: nowrap !important;
 }
 
-.slide-2-badge {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.slide-2-arrow {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#slide-2 .step-card:hover .slide-2-arrow {
-  transform: translateX(3px);
-}
-
-#slide-2 .step-card.step-spotlight .slide-2-badge {
-  background-color: #1c1917 !important;
-  color: #fef08a !important; /* dossier yellow highlight */
-  border-color: #1c1917 !important;
-  box-shadow: 2px 2px 0px rgba(185, 28, 28, 0.3);
-}
-
-#slide-2 .step-card.step-spotlight .slide-2-arrow {
-  transform: translateX(4px) scale(1.15);
-  color: #b91c1c !important;
-}
-
 /* ==========================================================================
    SLIDE 3 CRAZY NUMBERS CARDS ENHANCEMENTS (Generous Padding Left to separate text & frame)
    ========================================================================== */
