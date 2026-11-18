@@ -1667,6 +1667,38 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
   color: #b91c1c !important;
 }
 
+/* Slide 5 Spotlight Centering: Centered both horizontally and vertically */
+#slide-5 .step-card.step-spotlight .min-w-0 {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+#slide-5 .step-card.step-spotlight .slide-5-harm-title {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+#slide-5 .step-card.step-spotlight .write-line-row {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+#slide-5 .step-card.step-spotlight .write-line {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* Slide 5 Harms Docked Card Title: Enlarged and cleanly fitted without overflow */
 .slide-5-harm-title {
   font-size: clamp(1.1rem, 1.38vw, 1.4rem) !important;

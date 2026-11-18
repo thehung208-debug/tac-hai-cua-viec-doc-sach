@@ -8,7 +8,7 @@ export const Slide5HarmsMerged: React.FC = () => {
     { id: 4, line1: 'A wild, uncontrollable', line2: 'imagination' },
     { id: 5, line1: 'A domino disaster', line2: 'for money & free time' },
     { id: 6, line1: 'You can never', line2: 'become a thief' },
-    { id: 7, line1: 'Hiding in the bathroom all day', line2: null }
+    { id: 7, line1: 'Hiding in the bathroom', line2: 'all day' }
   ];
 
   return (
