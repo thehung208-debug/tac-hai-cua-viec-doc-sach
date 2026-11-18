@@ -1810,27 +1810,39 @@ button, a, input, select, textarea, .clickable-counter, .slide-picker-btn, .step
 }
 
 /* ==========================================================================
-   SLIDE 2 ROADMAP CARDS ENHANCEMENTS (130% Font, Expansive Width, Compact Height)
+   SLIDE 2 ROADMAP CARDS ENHANCEMENTS (Aligned to 5 and THE, Expansive Width)
    ========================================================================== */
 #slide-2 .step-card {
+  width: 100% !important;
+  max-width: 486.5px !important;
+  transform: none !important;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #slide-2 .step-card:hover {
-  transform: translateX(4px) translateY(-2px);
-  box-shadow: 6px 6px 0px rgba(28, 25, 23, 0.9);
+  transform: translateY(-2px) !important;
+  box-shadow: 6px 6px 0px rgba(28, 25, 23, 0.9) !important;
 }
 
 #slide-2 .step-card.step-spotlight {
-  transform: translateX(6px) scale(1.015) !important;
-  box-shadow: 7px 7px 0px rgba(28, 25, 23, 0.9) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 6px 6px 0px rgba(28, 25, 23, 0.9) !important;
   border-width: 2.5px !important;
+  border-color: #b91c1c !important;
+}
+
+#slide-2 .step-card.step-docked {
+  transform: none !important;
+}
+
+#slide-2 .step-card.step-dimmed {
+  transform: none !important;
 }
 
 .slide-2-card-title {
-  font-size: clamp(1.35rem, 1.85vw, 1.95rem) !important;
+  font-size: clamp(1.25rem, 1.75vw, 1.85rem) !important;
   line-height: 1.15 !important;
   white-space: nowrap !important;
 }
