@@ -115,10 +115,7 @@ export function initDeckEngine(): () => void {
       return existingLines;
     }
 
-    const rawHtml = textEl.getAttribute('data-raw-content') || textEl.innerHTML;
-    if (!textEl.hasAttribute('data-raw-content')) {
-      textEl.setAttribute('data-raw-content', rawHtml);
-    }
+    const rawHtml = textEl.innerHTML;
 
     // Explicit <br>
     if (/<br\s*\/?>/i.test(rawHtml)) {
@@ -491,10 +488,6 @@ export function initDeckEngine(): () => void {
         } else if (cardStep < currentStep) {
           card.classList.add('step-docked');
           if (penText) {
-            const rawContent = penText.getAttribute('data-raw-content');
-            if (rawContent) {
-              penText.innerHTML = rawContent;
-            }
             penText.style.clipPath = 'none';
             penText.style.opacity = '1';
             penText.querySelectorAll<HTMLElement>('.write-line').forEach(l => {

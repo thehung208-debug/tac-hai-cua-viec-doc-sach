@@ -47,12 +47,12 @@ export const Slide3StatsMerged: React.FC = () => {
                 -68%
               </div>
               <div className="text-left flex-1 min-w-0">
-                <h3 className="text-2xl sm:text-[28px] md:text-[32px] font-bold text-[#141413] font-dossier-title leading-[1.2] pen-write-anim">
-                  <div className="write-line-row">
-                    <span className="write-line">You lose the right</span>
+                <h3 className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#141413] font-dossier-title leading-[1.25] pen-write-anim">
+                  <div className="write-line-row block">
+                    <span className="write-line whitespace-nowrap block">You lose the right</span>
                   </div>
-                  <div className="write-line-row">
-                    <span className="write-line text-[#b91c1c] font-black">to get mad</span>
+                  <div className="write-line-row block mt-0.5 sm:mt-1">
+                    <span className="write-line whitespace-nowrap block text-[#b91c1c] font-black">to get mad</span>
                   </div>
                 </h3>
               </div>
@@ -67,12 +67,12 @@ export const Slide3StatsMerged: React.FC = () => {
                 TSUNDOKU
               </div>
               <div className="text-left flex-1 min-w-0">
-                <h3 className="text-2xl sm:text-[28px] md:text-[32px] font-bold text-[#141413] font-dossier-title leading-[1.2] pen-write-anim">
-                  <div className="write-line-row">
-                    <span className="write-line">Buying mountains of books,</span>
+                <h3 className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#141413] font-dossier-title leading-[1.25] pen-write-anim">
+                  <div className="write-line-row block">
+                    <span className="write-line whitespace-nowrap block">Buying mountains of books,</span>
                   </div>
-                  <div className="write-line-row">
-                    <span className="write-line text-[#b45309] font-black">never reading them</span>
+                  <div className="write-line-row block mt-0.5 sm:mt-1">
+                    <span className="write-line whitespace-nowrap block text-[#b45309] font-black">never reading them</span>
                   </div>
                 </h3>
               </div>
@@ -87,12 +87,12 @@ export const Slide3StatsMerged: React.FC = () => {
                 +2 YEARS
               </div>
               <div className="text-left flex-1 min-w-0">
-                <h3 className="text-2xl sm:text-[28px] md:text-[32px] font-bold text-[#141413] font-dossier-title leading-[1.2] pen-write-anim">
-                  <div className="write-line-row">
-                    <span className="write-line">You are forced</span>
+                <h3 className="text-[20px] sm:text-[23px] md:text-[26px] lg:text-[28px] font-bold text-[#141413] font-dossier-title leading-[1.25] pen-write-anim">
+                  <div className="write-line-row block">
+                    <span className="write-line whitespace-nowrap block">You are forced</span>
                   </div>
-                  <div className="write-line-row">
-                    <span className="write-line text-[#0369a1] font-black">to live 2 years longer</span>
+                  <div className="write-line-row block mt-0.5 sm:mt-1">
+                    <span className="write-line whitespace-nowrap block text-[#0369a1] font-black">to live 2 years longer</span>
                   </div>
                 </h3>
               </div>
